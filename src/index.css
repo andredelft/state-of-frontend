@@ -1,0 +1,118 @@
+@import-normalize;
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("./fonts/inter.woff2") format("woff2");
+  font-named-instance: "Regular";
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("./fonts/inter-italic.woff2") format("woff2");
+  font-named-instance: "Italic";
+}
+
+body {
+  margin: 0;
+  font-family: Inter;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: Menlo;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+}
+
+body {
+  --background-color: var(--slate-900);
+  background-color: var(--background-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  background: rgb(138, 35, 135);
+  background: linear-gradient(
+    265deg,
+    rgba(138, 35, 135, 1) 0%,
+    rgba(233, 64, 87, 1) 50%,
+    rgba(242, 113, 33, 1) 100%
+  );
+
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+h1 {
+  text-align: center;
+  font-size: 5rem;
+}
+
+a,
+a:visited,
+code {
+  color: white;
+  font-weight: 500;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ol > li::marker {
+  font-weight: 400;
+  color: var(--slate-400);
+}
+
+ul > li::marker {
+  color: var(--slate-600);
+}
+
+ol {
+  list-style-type: decimal;
+  padding-left: 1.6em;
+}
+
+li {
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 1.6em;
+}
+
+p {
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+}
