@@ -1,0 +1,8 @@
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  min-height: 50px;
+  gap: 2rem;
+  margin: 2rem 0;
+}

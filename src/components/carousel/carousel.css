@@ -1,0 +1,26 @@
+.carousel__container {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.carousel__container--snap {
+  scroll-snap-type: x mandatory;
+}
+
+.carousel__container--snap > .carousel__image {
+  scroll-snap-stop: always;
+}
+
+.carousel__container--snap-center > .carousel__image {
+  scroll-snap-align: center;
+}
+
+.carousel__container--snap-start > .carousel__image {
+  scroll-snap-align: start;
+}
+
+.carousel__container--snap-end > .carousel__image {
+  scroll-snap-align: end;
+}

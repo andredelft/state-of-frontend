@@ -5,7 +5,7 @@
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
-  src: url("./fonts/inter.woff2") format("woff2");
+  src: url("./assets/fonts/inter.woff2") format("woff2");
   font-named-instance: "Regular";
 }
 
@@ -14,7 +14,7 @@
   font-style: italic;
   font-weight: 100 900;
   font-display: swap;
-  src: url("./fonts/inter-italic.woff2") format("woff2");
+  src: url("./assets/fonts/inter-italic.woff2") format("woff2");
   font-named-instance: "Italic";
 }
 
@@ -44,6 +44,10 @@ code {
   --slate-700: #334155;
   --slate-800: #1e293b;
   --slate-900: #0f172a;
+
+  --theme-purple: rgba(138, 35, 135, 1);
+  --theme-red: rgba(233, 64, 87, 1);
+  --theme-orange: rgba(242, 113, 33, 1);
 }
 
 body {
@@ -60,9 +64,9 @@ h6 {
   background: rgb(138, 35, 135);
   background: linear-gradient(
     265deg,
-    rgba(138, 35, 135, 1) 0%,
-    rgba(233, 64, 87, 1) 50%,
-    rgba(242, 113, 33, 1) 100%
+    var(--theme-purple) 0%,
+    var(--theme-red) 50%,
+    var(--theme-orange) 100%
   );
 
   background-clip: text;
@@ -86,6 +90,20 @@ menu {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
 ol > li::marker {

@@ -1,0 +1,28 @@
+.switch__container {
+  position: relative;
+  display: flex;
+  height: 38px;
+  width: 74px;
+  align-items: center;
+  border-radius: 9999px;
+  transition: background-color cubic-bezier(0.4, 0, 0.2, 1) 300ms;
+  background-color: var(--slate-400);
+}
+
+.switch__container.switch__container--checked {
+  background-color: var(--theme-red);
+}
+
+.switch__indicator {
+  display: block;
+  height: 34px;
+  width: 34px;
+  transition: transform cubic-bezier(0.4, 0, 0.2, 1) 300ms;
+  border-radius: 9999px;
+  background-color: var(--slate-100);
+  transform: translateX(2px);
+}
+
+.switch__container--checked > .switch__indicator {
+  transform: translateX(38px);
+}

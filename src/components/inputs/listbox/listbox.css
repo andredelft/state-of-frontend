@@ -1,0 +1,76 @@
+.listbox__container {
+  width: 400px;
+  position: relative;
+  color: var(--slate-700);
+  font-size: 0.7em;
+}
+
+.listbox__button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  width: 100%;
+  cursor: default;
+  border-radius: 15px;
+  padding: 8px 12px;
+  text-align: left;
+  background-color: var(--slate-100);
+}
+
+.listbox__button:hover {
+  background-color: var(--slate-200);
+}
+
+.listbox__selected-value {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.listbox__dropdown-icon {
+  display: inline-flex;
+  align-items: center;
+  pointer-events: none;
+  color: var(--slate-400);
+}
+
+.listbox__options {
+  /* absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm */
+  position: absolute;
+  list-style: none;
+  margin: 4px 0 0 0;
+  padding: 0;
+  max-height: 240px;
+  width: 100%;
+  overflow: auto;
+  border-radius: 10px;
+  background-color: var(--slate-100);
+}
+
+.listbox__option {
+  position: relative;
+  cursor: default;
+  user-select: none;
+  margin: 0;
+  padding: 8px 16px 8px 50px;
+}
+
+.listbox__option--active {
+  background-color: var(--theme-red);
+  color: white;
+}
+
+.listbox__option--selected {
+  font-weight: 500;
+}
+
+.listbox__checkmark {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 12px;
+  display: flex;
+  align-items: center;
+}

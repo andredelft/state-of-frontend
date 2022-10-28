@@ -1,0 +1,9 @@
+.with-label__container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.with-label__label {
+  white-space: nowrap;
+}
