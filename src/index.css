@@ -45,9 +45,45 @@ code {
   --slate-800: #1e293b;
   --slate-900: #0f172a;
 
-  --theme-purple: rgba(138, 35, 135, 1);
-  --theme-red: rgba(233, 64, 87, 1);
-  --theme-orange: rgba(242, 113, 33, 1);
+  --purple-100: #e8d3e7;
+  --purple-200: #d0a7cf;
+  --purple-300: #b97bb7;
+  --purple-400: #a14f9f;
+  --purple-500: #8a2387;
+  --purple-600: #6e1c6c;
+  --purple-700: #531551;
+  --purple-800: #370e36;
+  --purple-900: #1c071b;
+
+  --red-100: #fdecee;
+  --red-200: #f6b3bc;
+  --red-300: #f28c9a;
+  --red-400: #ed6679;
+  --red-500: #e94057;
+  --red-600: #ba3346;
+  --red-700: #8c2634;
+  --red-800: #5d1a23;
+  --red-900: #170609;
+
+  --orange-100: #fce3d3;
+  --orange-200: #fac6a6;
+  --orange-300: #f7aa7a;
+  --orange-400: #f58d4d;
+  --orange-500: #f27121;
+  --orange-600: #c25a1a;
+  --orange-700: #914414;
+  --orange-800: #612d0d;
+  --orange-900: #301707;
+
+  --theme-purple: var(--purple-500);
+  --theme-red: var(--red-500);
+  --theme-orange: var(--orange-500);
+  --theme-gradient: linear-gradient(
+    265deg,
+    var(--theme-purple) 0%,
+    var(--theme-red) 50%,
+    var(--theme-orange) 100%
+  );
 }
 
 body {
@@ -62,12 +98,7 @@ h4,
 h5,
 h6 {
   background: rgb(138, 35, 135);
-  background: linear-gradient(
-    265deg,
-    var(--theme-purple) 0%,
-    var(--theme-red) 50%,
-    var(--theme-orange) 100%
-  );
+  background: var(--theme-gradient);
 
   background-clip: text;
   -webkit-text-fill-color: transparent;

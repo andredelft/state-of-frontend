@@ -1,0 +1,35 @@
+.button {
+  color: white;
+  background: var(--theme-red);
+  padding: 0.3em 0.5em;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.8em;
+  color: var(--red-100);
+  transition: all 0.2s ease;
+}
+
+.button:hover {
+  border-color: var(--red-600);
+  background: var(--red-600);
+}
+
+.button__group {
+  display: flex;
+  width: 100%;
+  gap: 1em;
+}
+
+.button__group--wrap {
+  flex-wrap: wrap;
+}
+
+.button__group--start {
+  justify-items: start;
+}
+.button__group--center {
+  justify-content: center;
+}
+.button__group--right {
+  justify-content: end;
+}
