@@ -1,6 +1,6 @@
 import { Slide } from "../components/slide/Slide";
 
-export function SomeOtherSlide() {
+export function SomeExampleSlide() {
   return (
     <Slide>
       <h1>Heading 1</h1>
