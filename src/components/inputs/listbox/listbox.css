@@ -2,7 +2,7 @@
   width: 400px;
   position: relative;
   color: var(--slate-700);
-  font-size: 0.7em;
+  font-size: 0.65em;
 }
 
 .listbox__button {
@@ -13,7 +13,7 @@
   width: 100%;
   cursor: default;
   border-radius: 15px;
-  padding: 8px 12px;
+  padding: 6px 14px;
   text-align: left;
   background-color: var(--slate-100);
 }
@@ -56,12 +56,12 @@
   padding: 8px 16px 8px 50px;
 }
 
-.listbox__option--active {
+.listbox__option[data-headlessui-state~="active"] {
   background-color: var(--theme-red);
   color: white;
 }
 
-.listbox__option--selected {
+.listbox__option[data-headlessui-state~="selected"] {
   font-weight: 500;
 }
 

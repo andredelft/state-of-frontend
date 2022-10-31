@@ -54,7 +54,7 @@ export function ScrollSnap() {
       </div>
       <Carousel
         enableSnap={enableSnap}
-        snapAlign={selectedItem.name}
+        snapAlign={selectedItem?.name}
         images={images}
       />
     </Slide>
