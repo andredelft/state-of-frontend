@@ -19,6 +19,10 @@
   scroll-snap-stop: always;
 }
 
+.slide--wide {
+  padding-inline: 5vw;
+}
+
 .slide__title-slide {
   text-align: center;
   display: flex;

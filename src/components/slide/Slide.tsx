@@ -12,9 +12,10 @@ export function SlideContainer({ children }: SlideContainerProps) {
 
 type SlideProps = {
   className?: string;
+  isWide?: boolean;
   children?: ReactNode;
 };
 
-export function Slide({ className, children }: SlideProps) {
-  return <div className={clsx("slide", className)}>{children}</div>;
+export function Slide({ className, isWide, children }: SlideProps) {
+  return <div className={clsx("slide", isWide && "slide--wide", className)}>{children}</div>;
 }

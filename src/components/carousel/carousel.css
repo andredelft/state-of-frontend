@@ -9,6 +9,10 @@
   scroll-snap-type: x mandatory;
 }
 
+.carousel__image {
+  max-height: 35vh;
+}
+
 .carousel__container--snap > .carousel__image {
   scroll-snap-stop: always;
 }
