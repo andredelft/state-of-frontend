@@ -1,4 +1,4 @@
-.slide-container {
+.slide__container {
   height: 100vh;
   width: 100vw;
   overflow: auto;
@@ -17,4 +17,17 @@
 
   scroll-snap-align: center;
   scroll-snap-stop: always;
+}
+
+.slide__title-slide {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide__title-slide > h1 {
+  font-size: 4em;
+  margin-bottom: 0;
 }

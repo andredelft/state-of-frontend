@@ -1,9 +1,9 @@
 import { SlideContainer } from "./components/slide/Slide";
-import { Introduction } from "./slides/Introduction";
+import { Introduction } from "./slides/Title";
 import { ScrollSnap } from "./slides/ScrollSnap";
 import { SomeOtherSlide } from "./slides/SomeOtherSlide";
 
-export function App() {
+export function Presentation() {
   return (
     <SlideContainer>
       <Introduction />
