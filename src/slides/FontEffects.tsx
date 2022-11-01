@@ -6,20 +6,28 @@ import './font-effects.css';
 import clsx from "clsx";
 
 export function FontEffects() {
-  const [isAnimated, setIsAnimated] = useState<boolean>(false);
+  const [bgAnimated, setBgAnimated] = useState<boolean>(false);
+  const [weightAnimated, setWeightAnimated] = useState<boolean>(false);
 
   return (
     <Slide isWide>
       <div className="font-effects">
-          <h1 className={clsx(
-            "font-effects__heading",
-            isAnimated && "font-effects__heading--animated"
-          )}>
-            Variable font
-          </h1>
-          <WithLabel label="Animate">
-            <Switch checked={isAnimated} onChange={setIsAnimated}/>
+        <h1 className={clsx(
+          "font-effects__heading",
+          weightAnimated && "font-effects__heading--weight-animated",
+          bgAnimated && "font-effects__heading--bg-animated"
+        )}>
+          I'm font of you!
+        </h1>
+        <h2>Animate:</h2>
+        <div className="font-effects__controls">
+          <WithLabel label="Background">
+            <Switch checked={bgAnimated} onChange={setBgAnimated}/>
           </WithLabel>
+          <WithLabel label="Weight">
+            <Switch checked={weightAnimated} onChange={setWeightAnimated}/>
+          </WithLabel>
+        </div>
       </div>
     </Slide>
   );

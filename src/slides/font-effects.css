@@ -9,20 +9,52 @@
 
 .font-effects__heading {
   font-family: 'Changa', sans-serif;
-  font-weight: 200;
-  font-size: 15vw;
+  font-weight: 800;
+  font-size: 13vw;
   line-height: 1;
+  margin-block: 0.2em;
+  --weight-animation: fontWeight 1.5s infinite alternate;
+  --bg-animation: fontBackground 5s infinite alternate;
 }
 
-.font-effects__heading--animated {
-  animation: fontWeight 1.5s infinite alternate;
+.font-effects__heading--weight-animated {
+  animation: var(--weight-animation);
+}
+
+.font-effects__heading--bg-animated {
+  animation: var(--bg-animation);
+}
+
+.font-effects__heading--weight-animated.font-effects__heading--bg-animated {
+  animation: var(--weight-animation), var(--bg-animation);
+}
+
+.font-effects__controls {
+  display: flex;
+  align-items: center;
+  gap: 1em;
 }
 
 @keyframes fontWeight {
   0% {
-    font-weight: 200;
+    font-weight: 800;
   }
   100% {
-    font-weight: 900;
+    font-weight: 200;
+  }
+}
+
+@keyframes fontBackground {
+  0% {
+    background-size: 100% auto;
+    background-image: url('../assets/images/fontBackgrounds/1.jpg');
+  }
+  50% {
+    background-size: contain;
+    background-image: url('../assets/images/fontBackgrounds/2.jpg');
+  }
+  100% {
+    background-size: contain;
+    background-image: url('../assets/images/fontBackgrounds/3.jpg');
   }
 }
