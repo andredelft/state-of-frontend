@@ -35,7 +35,7 @@ export function Listbox<T extends string>({
               {item.title}
               {item.name === selected?.name && (
                 <span className="listbox__checkmark">
-                  <Check size={30} weight="bold" aria-hidden="true" />
+                  <Check weight="bold" aria-hidden="true" />
                 </span>
               )}
             </HeadlessUIListbox.Option>

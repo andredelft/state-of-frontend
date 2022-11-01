@@ -1,0 +1,31 @@
+dialog {
+  font-size: 1.2em;
+  border-radius: 0.5em;
+  border: none;
+  overflow: visible;
+}
+
+dialog > *:first-child {
+  margin-top: 0px;
+}
+
+dialog > *:last-child {
+  margin-bottom: 0px;
+}
+
+.dialog__title {
+  margin-bottom: 0.5em;
+}
+
+.dialog__backdrop--blur::backdrop {
+  backdrop-filter: blur(8px);
+}
+.dialog__backdrop--saturate::backdrop {
+  backdrop-filter: saturate(3);
+}
+.dialog__backdrop--sepia::backdrop {
+  backdrop-filter: sepia();
+}
+.dialog__backdrop--invert::backdrop {
+  backdrop-filter: invert();
+}
