@@ -20,8 +20,8 @@ export function Dialog() {
 
   const backdropOptions: ListboxItems<BackdropOption> = [
     { name: "blur", title: "Blur" },
-    { name: "saturate", title: "Saturate" },
     { name: "sepia", title: "Sepia" },
+    { name: "saturate", title: "Saturate" },
     { name: "invert", title: "Invert" },
   ];
 
@@ -29,10 +29,10 @@ export function Dialog() {
     <>
       <Slide>
         <h1>Dialog</h1>
-        <p>Uitdagingen van een dialog:</p>
+        <p>Uitdagingen van een dialog component:</p>
         <ul>
-          <li>Positioning</li>
-          <li>Tab trap</li>
+          <li>Positioning (z-index!)</li>
+          <li>Focus management</li>
           <li>Scroll behaviour</li>
         </ul>
         <Button.Group>
