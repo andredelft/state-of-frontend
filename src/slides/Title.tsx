@@ -1,4 +1,4 @@
-import { TitleSlide } from "../components/slide/TitleSlide";
+import { TitleSlide } from '../components/slide/TitleSlide';
 
 export function Introduction() {
   return (

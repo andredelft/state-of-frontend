@@ -1,28 +1,28 @@
-import clsx from "clsx";
-import { useRef, useState } from "react";
-import { Button } from "../components/button/Button";
+import clsx from 'clsx';
+import { useRef, useState } from 'react';
+import { Button } from '../components/button/Button';
 import {
   Listbox,
   ListboxItem,
   ListboxItems,
-} from "../components/inputs/listbox/Listbox";
-import { WithLabel } from "../components/inputs/WithLabel";
-import { Slide } from "../components/slide/Slide";
-import "./dialog.css";
+} from '../components/inputs/listbox/Listbox';
+import { WithLabel } from '../components/inputs/WithLabel';
+import { Slide } from '../components/slide/Slide';
+import './dialog.css';
 
-type BackdropOption = "blur" | "saturate" | "sepia" | "invert";
+type BackdropOption = 'blur' | 'saturate' | 'sepia' | 'invert';
 
 export function Dialog() {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [backdrop, setBackdrop] = useState<ListboxItem<BackdropOption> | null>(
-    null
+    null,
   );
 
   const backdropOptions: ListboxItems<BackdropOption> = [
-    { name: "blur", title: "Blur" },
-    { name: "sepia", title: "Sepia" },
-    { name: "saturate", title: "Saturate" },
-    { name: "invert", title: "Invert" },
+    { name: 'blur', title: 'Blur' },
+    { name: 'sepia', title: 'Sepia' },
+    { name: 'saturate', title: 'Saturate' },
+    { name: 'invert', title: 'Invert' },
   ];
 
   return (
@@ -44,8 +44,7 @@ export function Dialog() {
 
       <dialog
         ref={dialogRef}
-        className={clsx(backdrop && `dialog__backdrop--${backdrop.name}`)}
-      >
+        className={clsx(backdrop && `dialog__backdrop--${backdrop.name}`)}>
         <h1 className="dialog__title">This is a dialog</h1>
         <WithLabel label="Backdrop type">
           <Listbox

@@ -1,4 +1,4 @@
-import { Slide } from "../components/slide/Slide";
+import { Slide } from '../components/slide/Slide';
 
 export function SomeExampleSlide() {
   return (

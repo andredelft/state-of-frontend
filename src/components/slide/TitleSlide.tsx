@@ -1,5 +1,5 @@
-import { Slide } from "./Slide";
-import "./slide.css";
+import { Slide } from './Slide';
+import './slide.css';
 
 type TitleSlideProps = {
   title: string;
