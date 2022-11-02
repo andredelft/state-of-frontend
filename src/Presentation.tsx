@@ -15,8 +15,8 @@ export function Presentation() {
       <ScrollSnap/>
       <FontEffects/>
       <Dialog/>
-      <Grid/>
       <ContainerQueries />
+      <Grid/>
     </SlideContainer>
   );
 }
