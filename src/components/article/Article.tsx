@@ -8,7 +8,7 @@ export type ArticleProps = {
   tags: string[];
   title: string;
   description: ReactNode;
-  date: Date;
+  date: string;
   resizable?: boolean;
   container?: boolean;
   id?: string;
@@ -50,7 +50,7 @@ export function Article({
           </div>
           <h1 className="article__title">{title}</h1>
           <p className="article__description">{description}</p>
-          <div className="article__date">{date.toLocaleDateString()}</div>
+          <div className="article__date">{date}</div>
         </div>
       </div>
     </div>

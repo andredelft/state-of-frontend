@@ -1,5 +1,5 @@
 .listbox__container {
-  max-width: 15em;
+  min-width: 250px;
   position: relative;
   color: var(--slate-700);
   font-size: min(0.9em, 23px);

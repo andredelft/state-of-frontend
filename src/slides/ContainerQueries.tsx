@@ -1,6 +1,8 @@
 import { Article } from "../components/article/Article";
 import { Slide } from "../components/slide/Slide";
-import image from "../assets/images/unsplash/lucas-kapla.jpg";
+import image1 from "../assets/images/unsplash/lucas-kapla.jpg";
+import image2 from "../assets/images/unsplash/aperture-vintage.jpg";
+import image3 from "../assets/images/unsplash/anton-repponen.jpg";
 import { Minus, Plus } from "phosphor-react";
 import { Button } from "../components/button/Button";
 import "./container-queries.css";
@@ -11,22 +13,51 @@ import clsx from "clsx";
 
 type MockArticleProps = {
   container?: boolean;
-  id?: string;
 };
 
-function MockArticle({ container, id }: MockArticleProps) {
+function FirstArticle({ container }: MockArticleProps) {
   return (
     <Article
-      id={id}
+      id="first-article"
       container={container}
       resizable
-      image={image}
+      image={image1}
       tags={["CSS"]}
       title="Container responsive components with container queries"
       description={
         "By creating reusable intrinsically responsive primatives like the sidebar and the stack, we can create container sensitive components, in a fraction of the time."
       }
-      date={new Date()}
+      date={"2-11-2022"}
+    />
+  );
+}
+
+function SecondArticle({ container }: MockArticleProps) {
+  return (
+    <Article
+      container={container}
+      image={image2}
+      tags={["Lorem ipsum"]}
+      title="Donec lacinia consequat libero, vulputate viverra dui tempus non"
+      description={
+        "Donec lacinia consequat libero, vulputate viverra dui tempus non. Praesent vel turpis ut tellus viverra euismod vitae ac est. Ut pharetra luctus nisi, at viverra."
+      }
+      date={"1-11-2022"}
+    />
+  );
+}
+
+function ThirdArticle({ container }: MockArticleProps) {
+  return (
+    <Article
+      container={container}
+      image={image3}
+      tags={["Cicero"]}
+      title="Pellentesque euismod feugiat pellentesque"
+      description={
+        "Pellentesque euismod feugiat pellentesque. Sed hendrerit pulvinar purus ac hendrerit. Morbi vehicula iaculis pulvinar. Sed eu sem non diam molestie aliquet. Fusce id tincidunt neque."
+      }
+      date={"31-10-2022"}
     />
   );
 }
@@ -47,9 +78,9 @@ export function ContainerQueries() {
       <div
         className={clsx(counter !== 1 && "container-queries__article-wrapper")}
       >
-        <MockArticle id="first-article" container={enableCQ} />
-        {counter > 1 && <MockArticle container={enableCQ} />}
-        {counter > 2 && <MockArticle container={enableCQ} />}
+        <FirstArticle container={enableCQ} />
+        {counter > 1 && <SecondArticle container={enableCQ} />}
+        {counter > 2 && <ThirdArticle container={enableCQ} />}
       </div>
       <div className="container-queries__controls">
         <Button onClick={handleResetWidth}>Reset width</Button>

@@ -7,6 +7,7 @@ import { Grid } from "./slides/Grid";
 import { TitleSlide } from "./components/slide/TitleSlide";
 import { ContainerQueries } from "./slides/ContainerQueries";
 import { ImageEffects } from "./slides/ImageEffects";
+import { Conclusion } from "./slides/Conclusion";
 
 export function Presentation() {
   return (
@@ -19,6 +20,7 @@ export function Presentation() {
       <TitleSlide title="Container queries" />
       <ContainerQueries />
       <Grid />
+      <Conclusion />
     </SlideContainer>
   );
 }
