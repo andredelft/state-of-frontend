@@ -10,7 +10,7 @@
 .font-effects__heading {
   font-family: 'Changa', sans-serif;
   font-weight: 800;
-  font-size: 13vw;
+  font-size: 12vw;
   line-height: 1;
   margin-block: 0.2em;
   --weight-animation: fontWeight 1.5s infinite alternate;

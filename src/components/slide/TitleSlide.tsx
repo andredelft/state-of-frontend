@@ -3,14 +3,14 @@ import "./slide.css";
 
 type TitleSlideProps = {
   title: string;
-  description: string;
+  description?: string;
 };
 
 export function TitleSlide({ title, description }: TitleSlideProps) {
   return (
     <Slide className="slide__title-slide">
       <h1>{title}</h1>
-      <p>{description}</p>
+      {description && <p>{description}</p>}
     </Slide>
   );
 }

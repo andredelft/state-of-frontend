@@ -14,6 +14,7 @@ type SlideProps = {
   className?: string;
   isWide?: boolean;
   children?: ReactNode;
+  center?: boolean;
 };
 
 export function Slide({ className, isWide, children }: SlideProps) {

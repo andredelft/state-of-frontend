@@ -29,9 +29,11 @@ export function Dialog() {
     <>
       <Slide>
         <h1>Dialog</h1>
-        <p>Uitdagingen van een dialog component:</p>
+        <p>Uitdagingen van een dialog:</p>
         <ul>
-          <li>Positioning (z-index!)</li>
+          <li>
+            Positioning (<code>z-index</code>!)
+          </li>
           <li>Focus management</li>
           <li>Scroll behaviour</li>
         </ul>
