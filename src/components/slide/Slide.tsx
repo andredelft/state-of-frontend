@@ -1,6 +1,6 @@
-import clsx from "clsx";
-import { ReactNode } from "react";
-import "./slide.css";
+import clsx from 'clsx';
+import { ReactNode } from 'react';
+import './slide.css';
 
 type SlideContainerProps = {
   children?: ReactNode;
@@ -17,5 +17,9 @@ type SlideProps = {
 };
 
 export function Slide({ className, isWide, children }: SlideProps) {
-  return <div className={clsx("slide", isWide && "slide--wide", className)}>{children}</div>;
+  return (
+    <div className={clsx('slide', isWide && 'slide--wide', className)}>
+      {children}
+    </div>
+  );
 }

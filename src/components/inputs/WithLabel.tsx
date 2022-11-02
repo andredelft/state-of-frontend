@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
-import "./with-label.css";
+import { ReactNode } from 'react';
+import './with-label.css';
 
 type WithLabelProps = {
   label: string;

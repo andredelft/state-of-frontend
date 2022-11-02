@@ -1,7 +1,7 @@
-import "./carousel.css";
-import clsx from "clsx";
+import './carousel.css';
+import clsx from 'clsx';
 
-export type SnapAlign = "start" | "center" | "end";
+export type SnapAlign = 'start' | 'center' | 'end';
 
 type CarouselProps = {
   images: string[];
@@ -13,11 +13,10 @@ export function Carousel({ images, enableSnap, snapAlign }: CarouselProps) {
   return (
     <div
       className={clsx(
-        "carousel__container",
-        enableSnap && "carousel__container--snap",
-        snapAlign && `carousel__container--snap-${snapAlign}`
-      )}
-    >
+        'carousel__container',
+        enableSnap && 'carousel__container--snap',
+        snapAlign && `carousel__container--snap-${snapAlign}`,
+      )}>
       {images.map((image, i) => (
         <img
           className="carousel__image"

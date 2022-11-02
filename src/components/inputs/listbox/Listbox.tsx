@@ -1,6 +1,6 @@
-import { Listbox as HeadlessUIListbox } from "@headlessui/react";
-import { CaretDown, Check } from "phosphor-react";
-import "./listbox.css";
+import { Listbox as HeadlessUIListbox } from '@headlessui/react';
+import { CaretDown, Check } from 'phosphor-react';
+import './listbox.css';
 
 export type ListboxItem<T> = { name: T; title: string };
 export type ListboxItems<T> = ListboxItem<T>[];
@@ -30,8 +30,7 @@ export function Listbox<T extends string>({
             <HeadlessUIListbox.Option
               key={i}
               className="listbox__option"
-              value={item}
-            >
+              value={item}>
               {item.title}
               {item.name === selected?.name && (
                 <span className="listbox__checkmark">
