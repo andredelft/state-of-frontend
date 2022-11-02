@@ -84,6 +84,11 @@ code {
     var(--theme-red) 50%,
     var(--theme-orange) 100%
   );
+  --theme-gradient-secondary: linear-gradient(
+    265deg,
+    var(--theme-red) 50%,
+    var(--theme-orange) 100%
+  );
 }
 
 body {
