@@ -9,11 +9,11 @@ import { Switch } from "../components/inputs/switch/Switch";
 type GridArea = "one" | "two" | "three" | "four" | "five";
 
 const listboxItems: ListboxItems<GridArea> = [
-  { name: "one", title: "One" },
-  { name: "two", title: "Two" },
-  { name: "three", title: "Three" },
-  { name: "four", title: "Four" },
-  { name: "five", title: "Five" },
+  { name: "one", title: "one" },
+  { name: "two", title: "two" },
+  { name: "three", title: "three" },
+  { name: "four", title: "four" },
+  { name: "five", title: "five" },
 ];
 
 export function Grid() {
@@ -32,13 +32,15 @@ export function Grid() {
         </WithLabel>
 
         {showPhoto && (
-          <WithLabel label="Photo in grid area:">
-            <Listbox
-              items={listboxItems}
-              selected={selectedItem}
-              onChange={setSelectedItem}
-            />
-          </WithLabel>
+          <>
+            <WithLabel label=".photo { grid-area: ">
+              <Listbox
+                items={listboxItems}
+                selected={selectedItem}
+                onChange={setSelectedItem}
+              />
+            </WithLabel>
+          </>
         )}
       </div>
 
@@ -47,7 +49,7 @@ export function Grid() {
         <div/>
         <div/>
         <div/>
-        <div className={clsx(showPhoto && "grid__photo")}/>
+        <div className={clsx(showPhoto && "photo")}/>
       </div>
 
     </Slide>
