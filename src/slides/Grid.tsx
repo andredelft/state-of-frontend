@@ -44,7 +44,7 @@ export function Grid() {
         )}
       </div>
 
-      <div className={clsx('grid', showPhoto && 'grid--photo-area-' + selectedItem.name)}>
+      <div className={clsx('grid', showPhoto ? 'grid--photo-area-' + selectedItem.name : 'grid--with-hover')}>
         <div/>
         <div/>
         <div/>

@@ -13,7 +13,8 @@ Run presentation with `npm start` and navigate to http://localhost:3000. Tip: <k
    - Support nog beperkt
 - Image effects (Tim):
    - filters
-   - background-blend-mode: https://twitter.com/jh3yy/status/1586108297333321728
+   - mix blend mode
+   - (background-blend-mode: https://twitter.com/jh3yy/status/1586108297333321728)
 - Container queries (André)
 - Grid (Tim)
 

@@ -8,11 +8,11 @@
   color: var(--slate-900);
 }
 
-.grid:not([class*='grid--photo-area-']) {
+.grid--with-hover {
   position: relative;
 }
 
-.grid:not([class*='grid--photo-area-']):hover::after {
+.grid--with-hover:hover::after {
   content: "";
   position: absolute;
   inset: 0;
