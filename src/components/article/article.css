@@ -29,6 +29,7 @@
 
 .article__title {
   margin-top: 0;
+  margin-bottom: 0.3em;
   color: black;
   font-size: 1.5em;
   background: none;
@@ -65,7 +66,7 @@
 
 /****** MEDIA QUERIES *******/
 
-@media (max-width: 475px) {
+@media (max-width: calc(475px + 40vw)) {
   .article__media-query .article__content {
     font-size: 16px;
   }
@@ -75,7 +76,7 @@
   }
 }
 
-@media (min-width: 715px) {
+@media (min-width: calc(715px + 40vw)) {
   .article__media-query .article__cover-image {
     height: 400px;
   }
@@ -94,7 +95,7 @@
   }
 }
 
-@media (min-width: 875px) {
+@media (min-width: calc(875px + 40vw)) {
   .article__media-query .article__content {
     font-size: 18px;
   }

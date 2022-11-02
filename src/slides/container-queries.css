@@ -1,0 +1,27 @@
+.container-queries__controls {
+  font-size: 0.75em;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5em 0;
+  right: 0.5em;
+  bottom: 0.5em;
+  background-color: var(--slate-800);
+  padding: 0.7em;
+  border-radius: 0.7em;
+}
+
+.container-queries__controls .button__group {
+  margin: 0;
+}
+
+.container-queries__article-wrapper {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.container-queries__article-wrapper > * {
+  flex-basis: 100%;
+}

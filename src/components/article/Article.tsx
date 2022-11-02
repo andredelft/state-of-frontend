@@ -11,6 +11,7 @@ export type ArticleProps = {
   date: Date;
   resizable?: boolean;
   container?: boolean;
+  id?: string;
 };
 
 export function Article({
@@ -22,9 +23,11 @@ export function Article({
   date,
   resizable,
   container,
+  id,
 }: ArticleProps) {
   return (
     <div
+      id={id}
       className={clsx(
         "article",
         resizable && "article__resizable",
