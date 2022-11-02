@@ -1,6 +1,6 @@
-import { Switch as HeadlessUISwitch } from '@headlessui/react';
-import clsx from 'clsx';
-import './switch.css';
+import { Switch as HeadlessUISwitch } from "@headlessui/react";
+import clsx from "clsx";
+import "./switch.css";
 
 type SwitchProps = {
   label?: string;
@@ -14,9 +14,10 @@ export function Switch({ checked, onChange }: SwitchProps) {
       checked={checked}
       onChange={onChange}
       className={clsx(
-        'switch__container',
-        checked && 'switch__container--checked',
-      )}>
+        "switch__container",
+        checked && "switch__container--checked"
+      )}
+    >
       <span className="switch__indicator" />
     </HeadlessUISwitch>
   );
