@@ -1,0 +1,130 @@
+.image-effects {
+  display: flex;
+  width: 100%;
+}
+
+.image-effects__left {
+  flex-shrink: 0;
+  min-width: 300px;
+}
+
+.image-effects__left > * {
+  margin-bottom: 1em;
+}
+
+.image-effects__left .listbox__container {
+  width: 15em;
+}
+
+.image-effects__right {
+  padding-left: 1em;
+  flex-grow: 1;
+}
+
+.image-effects__circles {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  margin: auto;
+  height: 60vh;
+  border-radius: 1em;
+  background-color: white;
+}
+
+.image-effects__circles--with-images {
+  background-color: transparent;
+}
+
+.image-effects__circles > * {
+  position: absolute;
+  height: 40%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transition: transform 0.2s;
+  object-fit: cover;
+  --margin-offset: -25%;
+}
+
+.image-effects__circles--opacity > * {
+  opacity: 0.8;
+}
+
+.image-effects__circles--difference > * {
+  mix-blend-mode: difference;
+}
+
+.image-effects__circles--exclusion > * {
+  mix-blend-mode: exclusion;
+}
+
+.image-effects__circles--hard-light > * {
+  mix-blend-mode: hard-light;
+}
+
+.image-effects__circles--multiply > * {
+  mix-blend-mode: multiply;
+}
+
+.image-effects__circles--screen > * {
+  mix-blend-mode: screen;
+}
+
+.image-effects__circles--blur > * {
+  filter: blur(2px);
+}
+
+.image-effects__circles--contrast > * {
+  filter: contrast(200%);
+}
+
+.image-effects__circles--grayscale > * {
+  filter: grayscale(70%);
+}
+
+.image-effects__circles--hue-rotate > * {
+  filter: hue-rotate(90deg);
+}
+
+.image-effects__circles--drop-shadow > * {
+  filter: drop-shadow(16px 16px 20px red) invert(75%);
+}
+
+/**
+ * Item 1
+ */
+.image-effects__circles > *:nth-child(1) {
+  margin-top: var(--margin-offset);
+  margin-left: var(--margin-offset);
+  background-color: red;
+}
+
+.image-effects__circles:hover > *:nth-child(1) {
+  transform: translate(-22%, -11%);
+}
+
+/**
+ * Item 2
+ */
+.image-effects__circles > *:nth-child(2) {
+  margin-top: var(--margin-offset);
+  margin-right: var(--margin-offset);
+  background-color: blue;
+}
+
+.image-effects__circles:hover > *:nth-child(2) {
+  transform: translate(22%, -11%);
+}
+
+/**
+ * Item 3
+ */
+.image-effects__circles > *:nth-child(3) {
+  margin-bottom: var(--margin-offset);
+  background-color: green;
+}
+
+.image-effects__circles:hover > *:nth-child(3) {
+  transform: translate(0, 22%);
+}

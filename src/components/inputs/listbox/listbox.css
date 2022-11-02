@@ -1,5 +1,5 @@
 .listbox__container {
-  width: 15em;
+  max-width: 15em;
   position: relative;
   color: var(--slate-700);
   font-size: min(0.9em, 23px);
@@ -46,6 +46,7 @@
   overflow: auto;
   border-radius: 10px;
   background-color: var(--slate-100);
+  overscroll-behavior: none;
 }
 
 .listbox__option {

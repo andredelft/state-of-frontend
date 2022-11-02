@@ -5,6 +5,7 @@ import { SomeExampleSlide } from "./slides/SomeExampleSlide";
 import { Dialog } from "./slides/Dialog";
 import { FontEffects } from "./slides/FontEffects";
 import { Grid } from "./slides/Grid";
+import { ImageEffects } from "./slides/ImageEffects";
 
 export function Presentation() {
   return (
@@ -14,6 +15,7 @@ export function Presentation() {
       <ScrollSnap />
       <FontEffects />
       <Dialog />
+      <ImageEffects />
       <Grid />
     </SlideContainer>
   );
