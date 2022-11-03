@@ -74,7 +74,10 @@ export function ContainerQueries() {
   }
 
   return (
-    <Slide>
+    <Slide
+      warning="Your browser does not yet support container queries. Try another browser!"
+      id="container-queries"
+    >
       <div
         className={clsx(counter !== 1 && "container-queries__article-wrapper")}
       >

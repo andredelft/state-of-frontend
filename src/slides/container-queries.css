@@ -26,3 +26,9 @@
 .container-queries__article-wrapper > * {
   flex-basis: 100%;
 }
+
+@supports (container-type: inline-size) {
+  #container-queries .warning {
+    display: none;
+  }
+}

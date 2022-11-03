@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { ReactNode } from "react";
+import { Warning } from "../warning/Warning";
 import "./slide.css";
 
 type SlideContainerProps = {
@@ -11,12 +12,25 @@ export function SlideContainer({ children }: SlideContainerProps) {
 }
 
 type SlideProps = {
+  id?: string;
   className?: string;
   isWide?: boolean;
   children?: ReactNode;
   center?: boolean;
+  warning?: string;
 };
 
-export function Slide({ className, isWide, children }: SlideProps) {
-  return <div className={clsx("slide", isWide && "slide--wide", className)}>{children}</div>;
+export function Slide({
+  id,
+  className,
+  isWide,
+  children,
+  warning,
+}: SlideProps) {
+  return (
+    <div id={id} className={clsx("slide", isWide && "slide--wide", className)}>
+      {warning && <Warning warning={warning} />}
+      {children}
+    </div>
+  );
 }
