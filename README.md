@@ -1,5 +1,7 @@
 # The state of CSS
 
+Hosted on https://beautiful-tulumba-7b796d.netlify.app/.
+
 Run presentation with `npm start` and navigate to http://localhost:3000. Tip: <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>F</kbd> in Chrome to enable kiosk mode.
 
 ## Onderwerpen
