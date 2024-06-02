@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Slide } from "../components/slide/Slide";
+import { Slide } from "../../components/slide/Slide";
 import './image-effects.css';
-import { Listbox, ListboxItem, ListboxItems } from "../components/inputs/listbox/Listbox";
-import { WithLabel } from "../components/inputs/WithLabel";
-import { Switch } from "../components/inputs/switch/Switch";
-import image1 from "../assets/images/malta/1.jpg";
-import image2 from "../assets/images/malta/5.jpg";
-import image3 from "../assets/images/malta/7.jpg";
+import { Listbox, ListboxItem, ListboxItems } from "../../components/inputs/listbox/Listbox";
+import { WithLabel } from "../../components/inputs/WithLabel";
+import { Switch } from "../../components/inputs/switch/Switch";
+import image1 from "../../assets/images/malta/1.jpg";
+import image2 from "../../assets/images/malta/5.jpg";
+import image3 from "../../assets/images/malta/7.jpg";
 import clsx from "clsx";
 
 type ImageEffect = "normal" | "opacity" | "difference" | "exclusion" | "hard-light" | "multiply" | "screen" | "blur" | "contrast" | "grayscale" | "hue-rotate" | "drop-shadow";

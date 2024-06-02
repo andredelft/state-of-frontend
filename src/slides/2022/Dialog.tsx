@@ -1,13 +1,13 @@
 import clsx from "clsx";
 import React, { useRef, useState } from "react";
-import { Button } from "../components/button/Button";
+import { Button } from "../../components/button/Button";
 import {
   Listbox,
   ListboxItem,
   ListboxItems,
-} from "../components/inputs/listbox/Listbox";
-import { WithLabel } from "../components/inputs/WithLabel";
-import { Slide } from "../components/slide/Slide";
+} from "../../components/inputs/listbox/Listbox";
+import { WithLabel } from "../../components/inputs/WithLabel";
+import { Slide } from "../../components/slide/Slide";
 import "./dialog.css";
 
 type BackdropOption = "blur" | "saturate" | "sepia" | "invert";

@@ -1,22 +1,22 @@
 import { useState } from "react";
-import image1 from "../assets/images/malta/1.jpg";
-import image2 from "../assets/images/malta/2.jpg";
-import image3 from "../assets/images/malta/3.jpg";
-import image4 from "../assets/images/malta/4.jpg";
-import image5 from "../assets/images/malta/5.jpg";
-import image6 from "../assets/images/malta/6.jpg";
-import image7 from "../assets/images/malta/7.jpg";
-import image8 from "../assets/images/malta/8.jpg";
-import { Carousel, SnapAlign } from "../components/carousel/Carousel";
+import image1 from "../../assets/images/malta/1.jpg";
+import image2 from "../../assets/images/malta/2.jpg";
+import image3 from "../../assets/images/malta/3.jpg";
+import image4 from "../../assets/images/malta/4.jpg";
+import image5 from "../../assets/images/malta/5.jpg";
+import image6 from "../../assets/images/malta/6.jpg";
+import image7 from "../../assets/images/malta/7.jpg";
+import image8 from "../../assets/images/malta/8.jpg";
+import { Carousel, SnapAlign } from "../../components/carousel/Carousel";
 import {
   Listbox,
   ListboxItem,
   ListboxItems,
-} from "../components/inputs/listbox/Listbox";
-import { Slide } from "../components/slide/Slide";
-import { Switch } from "../components/inputs/switch/Switch";
+} from "../../components/inputs/listbox/Listbox";
+import { Slide } from "../../components/slide/Slide";
+import { Switch } from "../../components/inputs/switch/Switch";
 import "./scroll-snap.css";
-import { WithLabel } from "../components/inputs/WithLabel";
+import { WithLabel } from "../../components/inputs/WithLabel";
 
 const images = [image1, image2, image3, image4, image5, image6, image7, image8];
 

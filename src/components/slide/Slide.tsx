@@ -30,6 +30,7 @@ export function Slide({
   return (
     <div id={id} className={clsx("slide", isWide && "slide--wide", className)}>
       {warning && <Warning warning={warning} />}
+
       {children}
     </div>
   );

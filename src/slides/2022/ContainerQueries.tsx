@@ -1,14 +1,14 @@
-import { Article } from "../components/article/Article";
-import { Slide } from "../components/slide/Slide";
-import image1 from "../assets/images/unsplash/lucas-kapla.jpg";
-import image2 from "../assets/images/unsplash/aperture-vintage.jpg";
-import image3 from "../assets/images/unsplash/anton-repponen.jpg";
+import { Article } from "../../components/article/Article";
+import { Slide } from "../../components/slide/Slide";
+import image1 from "../../assets/images/unsplash/lucas-kapla.jpg";
+import image2 from "../../assets/images/unsplash/aperture-vintage.jpg";
+import image3 from "../../assets/images/unsplash/anton-repponen.jpg";
 import { Minus, Plus } from "phosphor-react";
-import { Button } from "../components/button/Button";
+import { Button } from "../../components/button/Button";
 import "./container-queries.css";
 import { useState } from "react";
-import { WithLabel } from "../components/inputs/WithLabel";
-import { Switch } from "../components/inputs/switch/Switch";
+import { WithLabel } from "../../components/inputs/WithLabel";
+import { Switch } from "../../components/inputs/switch/Switch";
 import clsx from "clsx";
 
 type MockArticleProps = {

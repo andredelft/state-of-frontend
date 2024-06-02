@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Slide } from "../components/slide/Slide";
+import { Slide } from "../../components/slide/Slide";
 import './grid.css';
-import { Listbox, ListboxItem, ListboxItems } from "../components/inputs/listbox/Listbox";
-import { WithLabel } from "../components/inputs/WithLabel";
+import { Listbox, ListboxItem, ListboxItems } from "../../components/inputs/listbox/Listbox";
+import { WithLabel } from "../../components/inputs/WithLabel";
 import clsx from "clsx";
-import { Switch } from "../components/inputs/switch/Switch";
+import { Switch } from "../../components/inputs/switch/Switch";
 
 type GridArea = "one" | "two" | "three" | "four" | "five";
 
