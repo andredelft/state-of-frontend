@@ -30,23 +30,22 @@ Run presentation with `npm start` and navigate to http://localhost:3000. Tip: <k
 
 # 2024
 
-Intro Aviva site als uitgangspunt, nieuwe mogelijkheden in verwerken.
+1. Rondleiding door site - Andre
+   - Meekleurende header
+   - Grid
+   - Micro animations
+     - Arrow button
+     - Bubble background button
 
-Mijn laptop
+2. Text animation - Tim
 
-In aankondiging: Iets technischer dan de vorige keer.
+3. Getallen animeren met CSS - Andre
 
-Even demo-en wat voor dingen we nu hebben toegevoegd.
+4. View-timeline - Tim
+	- Parallax (header)
+	- Snippets
+	- Logo slider
 
-Paar dingen uitlichten
+5. Shaders - Andre
 
-- Scroll animaties
-	- (scroll en view)
-	- Vb Aviva site
-	- Video maken (native v.s. gsap)
-
-- Voor later: Transition API
-
-- Sub grid (rich text luca)
-
-- Shaders
+6. Page transition - Tim
