@@ -1,5 +1,7 @@
 .button {
-  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: var(--theme-red);
   padding: 0.3em 0.5em;
   border-radius: 0.5em;
@@ -9,11 +11,16 @@
   transition: background-color 0.2s ease;
 }
 
-.button__rounded {
+.button--rounded {
   height: 1.5em;
   width: 1.5em;
   padding: 0.1em;
   border-radius: 9999px;
+}
+
+.button--active {
+  transform: scale(1.2);
+  transform-origin: center;
 }
 
 .button:hover {

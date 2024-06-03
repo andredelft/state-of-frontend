@@ -18,6 +18,7 @@ type SlideProps = {
   children?: ReactNode;
   center?: boolean;
   warning?: string;
+  onClick?: () => void;
 };
 
 export function Slide({
@@ -26,9 +27,14 @@ export function Slide({
   isWide,
   children,
   warning,
+  onClick,
 }: SlideProps) {
   return (
-    <div id={id} className={clsx("slide", isWide && "slide--wide", className)}>
+    <div
+      id={id}
+      className={clsx("slide", isWide && "slide--wide", className)}
+      onClick={onClick}
+    >
       {warning && <Warning warning={warning} />}
 
       {children}

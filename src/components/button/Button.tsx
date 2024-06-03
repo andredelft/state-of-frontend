@@ -4,12 +4,18 @@ import "./button.css";
 
 type ButtonProps = {
   rounded?: boolean;
+  active?: boolean;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
-export function Button({ rounded, ...props }: ButtonProps) {
+export function Button({ rounded, active, ...props }: ButtonProps) {
   return (
     <button
-      className={clsx("button", rounded && "button__rounded", props.className)}
+      className={clsx(
+        "button",
+        rounded && "button--rounded",
+        active && "button--active",
+        props.className,
+      )}
       {...props}
     >
       {props.children}
@@ -31,7 +37,7 @@ function ButtonGroup({ wrap, justify, children, small }: ButtonGroupProps) {
         "button__group",
         wrap && "button__group--wrap",
         justify && `button__group--${justify}`,
-        small && "button__group--small"
+        small && "button__group--small",
       )}
     >
       {children}
