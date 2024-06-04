@@ -7,6 +7,7 @@
 
 @mixin video ($smallWidth, $largeWidth){
   video {
+    object-fit: contain;
     display: block;
     width: 100%;
   }
@@ -18,12 +19,19 @@
     padding: inherit;
 
     video {
+      object-position: right;
       width: $smallWidth;
+      max-width: 40vw;
     }
   }
 
   &--large {
     margin-top: 100px;
     width: $largeWidth;
+
+    video {
+      object-position: left;
+      max-height: 65vh;
+    }
   }
 }

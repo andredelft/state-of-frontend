@@ -10,6 +10,6 @@
 
 .view-timeline {
   &__video {
-    @include video(400px, 1000px);
+    @include video(400px, 80vw);
   }
 }
