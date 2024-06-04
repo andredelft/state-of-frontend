@@ -108,6 +108,7 @@ h6 {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 h1 {
   text-align: center;
   font-size: 3em;
@@ -171,4 +172,12 @@ ul {
 p {
   margin-top: 1.2em;
   margin-bottom: 1.2em;
+}
+
+.hide {
+  display: none;
+}
+
+.invisible {
+  visibility: hidden;
 }

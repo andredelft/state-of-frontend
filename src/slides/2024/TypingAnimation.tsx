@@ -1,55 +1,51 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
+import { flushSync } from "react-dom";
 import { Slide } from "../../components/slide/Slide";
-import "./typing-animation.css";
+import "./typing-animation.scss";
 import textAnimation from "../../assets/videos/textAnimation.mov";
 import { Button } from "../../components/button/Button";
 import clsx from "clsx";
 import spansImage from "../../assets/images/typingAnimation/spans.png";
 import spansResultGif from "../../assets/images/typingAnimation/spansResult.gif";
 import spansTwoImage from "../../assets/images/typingAnimation/spans2.png";
+import { useArrowNav } from "../../hooks/useArrowNav";
+
+const STEPS = [1, 2, 3, 4];
+const MIN_STEP = STEPS[0];
+const MAX_STEP = STEPS.slice(-1)[0];
 
 export function TypingAnimation() {
-  const [activeStep, setActiveStep] = useState(1);
+  const [activeStep, setActiveStep] = useState(MIN_STEP);
 
-  useEffect(() => {
-    function handleKeyDown(e: KeyboardEvent) {
-      if (e.key === "ArrowLeft") {
-        handlePrev();
-        return;
-      }
-
-      if (e.key === "ArrowRight") {
-        handleNext();
-      }
-    }
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [activeStep, handlePrev, handleNext]);
-
-  function handlePrev() {
-    handleActiveStep(Math.max(1, activeStep - 1));
-  }
-
-  function handleNext() {
-    handleActiveStep(Math.min(4, activeStep + 1));
-  }
-
-  function handleActiveStep(newStep: number) {
-    if ([1, 2].includes(activeStep) && [1, 2].includes(newStep)) {
+  const handleActiveStep = useCallback(
+    (newStep: number) => {
       document.startViewTransition(() => {
-        setActiveStep(newStep);
+        // about flushSync: https://malcolmkee.com/blog/view-transition-api-in-react-app/#usage-view-transition-api-with-react
+        flushSync(() => {
+          setActiveStep(newStep);
+        });
       });
-    } else {
-      setActiveStep(newStep);
-    }
-  }
+    },
+    [activeStep],
+  );
+
+  const handlePrev = useCallback(
+    () => handleActiveStep(Math.max(MIN_STEP, activeStep - 1)),
+    [activeStep, handleActiveStep],
+  );
+
+  const handleNext = useCallback(
+    () => handleActiveStep(Math.min(MAX_STEP, activeStep + 1)),
+    [activeStep, handleActiveStep],
+  );
+
+  useArrowNav(handlePrev, handleNext);
 
   return (
     <Slide isWide onClick={() => handleNext()}>
-      <div className="typing-animation-buttons">
+      <div className="typing-animation-nav-buttons">
         <Button.Group small>
-          {[1, 2, 3, 4].map((step) => (
+          {STEPS.map((step) => (
             <Button
               key={step}
               rounded
@@ -71,11 +67,17 @@ export function TypingAnimation() {
           activeStep === 1
             ? "typing-animation__video--large"
             : activeStep === 3
-              ? "typing-animation__video--hidden"
+              ? "hide"
               : "typing-animation__video--small",
         )}
       >
-        <video src={textAnimation} autoPlay loop muted />
+        <video
+          src={textAnimation}
+          className={clsx(activeStep !== 3 && "transition-name-typing-video")}
+          autoPlay
+          loop
+          muted
+        />
       </div>
 
       {activeStep > 1 && (
@@ -91,7 +93,12 @@ export function TypingAnimation() {
                   <div className="typing-animation__images">
                     <img src={spansImage} width="250" alt="" />
                     <span className="typing-animation__arrow-small">→</span>
-                    <img src={spansResultGif} width="500" alt="" />
+                    <img
+                      src={spansResultGif}
+                      width="500"
+                      alt=""
+                      className="transition-name-typing-video"
+                    />
                   </div>
                 </li>
               </>

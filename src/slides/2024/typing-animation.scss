@@ -1,0 +1,50 @@
+@import "mixins";
+
+.typing-animation-nav-buttons {
+  @include nav-buttons;
+}
+
+.transition-name-typing-video {
+  view-transition-name: typing-video;
+}
+
+.typing-animation {
+  &__video {
+    video {
+      display: block;
+      width: 100%;
+    }
+
+    &--small {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      padding: inherit;
+
+      video {
+        width: 700px;
+      }
+    }
+
+    &--large {
+      margin-top: 80px;
+      width: 100%;
+    }
+  }
+
+  &__images {
+    margin-top: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px
+  }
+
+  &__arrow-small {
+    margin-top: 90px;
+  }
+
+  &__arrow-large {
+    font-size: 100px;
+    margin: auto 0 auto 24px;
+  }
+}
