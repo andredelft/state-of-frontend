@@ -1,0 +1,5 @@
+@import "mixins";
+
+.page-transition-nav-buttons {
+  @include nav-buttons;
+}
