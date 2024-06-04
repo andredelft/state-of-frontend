@@ -1,33 +1,36 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import { Slide } from "../../components/slide/Slide";
 import "./typing-animation.scss";
-import textAnimation from "../../assets/videos/textAnimation.mov";
+import textAnimation from "../../assets/videos/textAnimation.mp4";
 import { Button } from "../../components/button/Button";
 import clsx from "clsx";
 import spansImage from "../../assets/images/typingAnimation/spans.png";
 import spansResultGif from "../../assets/images/typingAnimation/spansResult.gif";
 import spansTwoImage from "../../assets/images/typingAnimation/spans2.png";
 import { useArrowNav } from "../../hooks/useArrowNav";
+import { isElOutOfViewPort } from "../../utils/isInViewPort";
 
 const STEPS = [1, 2, 3, 4];
 const MIN_STEP = STEPS[0];
 const MAX_STEP = STEPS.slice(-1)[0];
 
 export function TypingAnimation() {
+  const refToCheckIfOutOfViewport = useRef(null);
   const [activeStep, setActiveStep] = useState(MIN_STEP);
 
-  const handleActiveStep = useCallback(
-    (newStep: number) => {
-      document.startViewTransition(() => {
-        // about flushSync: https://malcolmkee.com/blog/view-transition-api-in-react-app/#usage-view-transition-api-with-react
-        flushSync(() => {
-          setActiveStep(newStep);
-        });
+  const handleActiveStep = useCallback((newStep: number) => {
+    if (isElOutOfViewPort(refToCheckIfOutOfViewport.current)) {
+      return;
+    }
+
+    document.startViewTransition(() => {
+      // about flushSync: https://malcolmkee.com/blog/view-transition-api-in-react-app/#usage-view-transition-api-with-react
+      flushSync(() => {
+        setActiveStep(newStep);
       });
-    },
-    [activeStep],
-  );
+    });
+  }, []);
 
   const handlePrev = useCallback(
     () => handleActiveStep(Math.max(MIN_STEP, activeStep - 1)),
@@ -43,6 +46,8 @@ export function TypingAnimation() {
 
   return (
     <Slide isWide onClick={() => handleNext()}>
+      <div ref={refToCheckIfOutOfViewport} />
+
       <div className="typing-animation-nav-buttons">
         <Button.Group small>
           {STEPS.map((step) => (
@@ -73,7 +78,9 @@ export function TypingAnimation() {
       >
         <video
           src={textAnimation}
-          className={clsx(activeStep !== 3 && "transition-name-typing-video")}
+          className={clsx(
+            activeStep !== 3 && "typing-animation-transition-name",
+          )}
           autoPlay
           loop
           muted
@@ -97,7 +104,7 @@ export function TypingAnimation() {
                       src={spansResultGif}
                       width="500"
                       alt=""
-                      className="transition-name-typing-video"
+                      className="typing-animation-transition-name"
                     />
                   </div>
                 </li>

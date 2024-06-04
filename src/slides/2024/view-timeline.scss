@@ -1,0 +1,15 @@
+@import "mixins";
+
+.view-timeline-nav-buttons {
+  @include nav-buttons;
+}
+
+.view-timeline-transition-name {
+  view-transition-name: view-timeline-video;
+}
+
+.view-timeline {
+  &__video {
+    @include video(400px, 1000px);
+  }
+}

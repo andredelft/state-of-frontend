@@ -4,32 +4,13 @@
   @include nav-buttons;
 }
 
-.transition-name-typing-video {
+.typing-animation-transition-name {
   view-transition-name: typing-video;
 }
 
 .typing-animation {
   &__video {
-    video {
-      display: block;
-      width: 100%;
-    }
-
-    &--small {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      padding: inherit;
-
-      video {
-        width: 700px;
-      }
-    }
-
-    &--large {
-      margin-top: 80px;
-      width: 100%;
-    }
+    @include video(700px, 80%);
   }
 
   &__images {

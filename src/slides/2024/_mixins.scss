@@ -4,3 +4,26 @@
   right: 0;
   padding: inherit;
 }
+
+@mixin video ($smallWidth, $largeWidth){
+  video {
+    display: block;
+    width: 100%;
+  }
+
+  &--small {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: inherit;
+
+    video {
+      width: $smallWidth;
+    }
+  }
+
+  &--large {
+    margin-top: 100px;
+    width: $largeWidth;
+  }
+}
