@@ -25,7 +25,7 @@ export function TypingAnimation() {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [activeStep]);
+  }, [activeStep, handlePrev, handleNext]);
 
   function handlePrev() {
     handleActiveStep(Math.max(1, activeStep - 1));
@@ -83,18 +83,16 @@ export function TypingAnimation() {
           <h1>Hoe het werkt</h1>
 
           <ul>
-            {[2, 3].includes(activeStep) && (
+            {activeStep === 3 && (
               <>
                 <li>SPAN om elk character</li>
                 <li>
                   CSS transition: SPAN onzichtbaar → zichtbaar
-                  {activeStep === 3 && (
-                    <div className="typing-animation__images">
-                      <img src={spansImage} width="250" alt="" />
-                      <span className="typing-animation__arrow-small">→</span>
-                      <img src={spansResultGif} width="500" alt="" />
-                    </div>
-                  )}
+                  <div className="typing-animation__images">
+                    <img src={spansImage} width="250" alt="" />
+                    <span className="typing-animation__arrow-small">→</span>
+                    <img src={spansResultGif} width="500" alt="" />
+                  </div>
                 </li>
               </>
             )}
@@ -105,7 +103,7 @@ export function TypingAnimation() {
                 <li>
                   Elke SPAN 0.1s meer delay
                   <div className="typing-animation__images">
-                    <img src={spansTwoImage} width="500" alt="" />
+                    <img src={spansTwoImage} width="600" alt="" />
                     <span className="typing-animation__arrow-large">→</span>
                   </div>
                 </li>
