@@ -9,8 +9,8 @@ export function Conclusion() {
       description={
         <span className="conclusion__source">
           <GithubLogo className="conclusion__source--logo" />
-          <a href="https://github.com/andredelft/state-of-css">
-            andredelft/state-of-css
+          <a href="https://github.com/andredelft/state-of-frontend">
+            andredelft/state-of-frontend
           </a>
         </span>
       }
