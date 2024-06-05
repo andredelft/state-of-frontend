@@ -10,6 +10,7 @@
     object-fit: contain;
     display: block;
     width: 100%;
+    border-radius: 10px;
   }
 
   &--small {
@@ -31,7 +32,7 @@
 
     video {
       object-position: left;
-      max-height: 65vh;
+      max-height: 70vh;
     }
   }
 }

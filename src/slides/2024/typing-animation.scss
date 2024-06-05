@@ -17,7 +17,11 @@
     margin-top: 16px;
     display: flex;
     align-items: flex-start;
-    gap: 16px
+    gap: 16px;
+
+    img {
+      border-radius: 10px;
+    }
   }
 
   &__arrow-small {

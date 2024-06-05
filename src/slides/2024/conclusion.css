@@ -1,0 +1,11 @@
+.conclusion__source {
+  display: inline-flex;
+  gap: 0.5em;
+  align-items: center;
+  font-size: 1.1em;
+}
+
+.conclusion__source--logo {
+  font-size: 1.2em;
+  color: white;
+}

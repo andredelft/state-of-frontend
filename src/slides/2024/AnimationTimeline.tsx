@@ -1,20 +1,20 @@
 import React, { useCallback, useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import { Slide } from "../../components/slide/Slide";
-import "./view-timeline.scss";
+import "./animation-timeline.scss";
 import { Button } from "../../components/button/Button";
 import clsx from "clsx";
 import { useArrowNav } from "../../hooks/useArrowNav";
-import viewTimelineVideo1 from "../../assets/videos/view-timeline1.mp4";
-import viewTimelineVideo2 from "../../assets/videos/view-timeline2.mp4";
-import viewTimelineVideo3 from "../../assets/videos/view-timeline3.mp4";
+import viewTimelineVideo1 from "../../assets/videos/animation-timeline1.mp4";
+import viewTimelineVideo2 from "../../assets/videos/animation-timeline2.mp4";
+import viewTimelineVideo3 from "../../assets/videos/animation-timeline3.mp4";
 import { isElOutOfViewPort } from "../../utils/isInViewPort";
 
 const STEPS = [1, 2, 3, 4, 5];
 const MIN_STEP = STEPS[0];
 const MAX_STEP = STEPS.slice(-1)[0];
 
-export function ViewTimeline() {
+export function AnimationTimeline() {
   const refToCheckIfOutOfViewport = useRef(null);
   const [activeStep, setActiveStep] = useState(MIN_STEP);
 
@@ -54,7 +54,7 @@ export function ViewTimeline() {
     <Slide isWide onClick={() => handleNext()}>
       <div ref={refToCheckIfOutOfViewport} />
 
-      <div className="view-timeline-nav-buttons">
+      <div className="animation-timeline-nav-buttons">
         <Button.Group small>
           {STEPS.map((step) => (
             <Button
@@ -74,10 +74,10 @@ export function ViewTimeline() {
 
       <div
         className={clsx(
-          "view-timeline__video",
+          "animation-timeline__video",
           activeStep > 3
-            ? "view-timeline__video--small"
-            : "view-timeline__video--large",
+            ? "animation-timeline__video--small"
+            : "animation-timeline__video--large",
         )}
       >
         <video
@@ -86,7 +86,7 @@ export function ViewTimeline() {
             activeStep === 2 && viewTimelineVideo2,
             activeStep >= 3 && viewTimelineVideo3,
           )}
-          className="view-timeline-transition-name"
+          className="animation-timeline-transition-name"
           autoPlay
           loop
           muted
@@ -95,7 +95,7 @@ export function ViewTimeline() {
 
       {activeStep > 3 && (
         <>
-          <h1>View en Scroll Animations</h1>
+          <h1>Animation Timeline View en Scroll</h1>
 
           {activeStep === 5 && (
             <ul>
