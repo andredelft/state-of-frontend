@@ -31,13 +31,7 @@ type VideoSlideProps = {
 function VideoSlide({ videoSrc }: VideoSlideProps) {
   return (
     <div className="shaders__slide">
-      <video
-        src={videoSrc}
-        className="number-animation-transition-name"
-        autoPlay
-        loop
-        muted
-      />
+      <video src={videoSrc} autoPlay loop muted />
     </div>
   );
 }
