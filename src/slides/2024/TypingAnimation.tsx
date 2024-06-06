@@ -1,70 +1,24 @@
-import React, { useCallback, useRef, useState } from "react";
-import { flushSync } from "react-dom";
+import { useState } from "react";
 import { Slide } from "../../components/slide/Slide";
 import "./typing-animation.scss";
 import textAnimation from "../../assets/videos/textAnimation.mp4";
-import { Button } from "../../components/button/Button";
 import clsx from "clsx";
 import spansImage from "../../assets/images/typingAnimation/spans.png";
 import spansResultGif from "../../assets/images/typingAnimation/spansResult.gif";
 import spansTwoImage from "../../assets/images/typingAnimation/spans2.png";
-import { useArrowNav } from "../../hooks/useArrowNav";
-import { isElOutOfViewPort } from "../../utils/isInViewPort";
-
-const STEPS = [1, 2, 3, 4];
-const MIN_STEP = STEPS[0];
-const MAX_STEP = STEPS.slice(-1)[0];
+import { StepButtons } from "../../components/step-buttons/StepButtons";
 
 export function TypingAnimation() {
-  const refToCheckIfOutOfViewport = useRef(null);
-  const [activeStep, setActiveStep] = useState(MIN_STEP);
-
-  const handleActiveStep = useCallback((newStep: number) => {
-    if (isElOutOfViewPort(refToCheckIfOutOfViewport.current)) {
-      return;
-    }
-
-    document.startViewTransition(() => {
-      // about flushSync: https://malcolmkee.com/blog/view-transition-api-in-react-app/#usage-view-transition-api-with-react
-      flushSync(() => {
-        setActiveStep(newStep);
-      });
-    });
-  }, []);
-
-  const handlePrev = useCallback(
-    () => handleActiveStep(Math.max(MIN_STEP, activeStep - 1)),
-    [activeStep, handleActiveStep],
-  );
-
-  const handleNext = useCallback(
-    () => handleActiveStep(Math.min(MAX_STEP, activeStep + 1)),
-    [activeStep, handleActiveStep],
-  );
-
-  useArrowNav(handlePrev, handleNext);
+  const [activeStep, setActiveStep] = useState(1);
 
   return (
-    <Slide isWide onClick={() => handleNext()}>
-      <div ref={refToCheckIfOutOfViewport} />
-
-      <div className="typing-animation-nav-buttons">
-        <Button.Group small>
-          {STEPS.map((step) => (
-            <Button
-              key={step}
-              rounded
-              onClick={(e) => {
-                e.stopPropagation();
-                handleActiveStep(step);
-              }}
-              active={step === activeStep}
-            >
-              {step}
-            </Button>
-          ))}
-        </Button.Group>
-      </div>
+    <Slide isWide>
+      <StepButtons
+        activeStep={activeStep}
+        onActiveStepChange={setActiveStep}
+        numSteps={4}
+        transitionSteps={[2, 3, 4]}
+      />
 
       <div
         className={clsx(

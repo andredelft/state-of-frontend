@@ -5,7 +5,7 @@
   padding: inherit;
 }
 
-@mixin video ($smallWidth, $largeWidth){
+@mixin video($smallWidth, $largeWidth) {
   video {
     object-fit: contain;
     display: block;

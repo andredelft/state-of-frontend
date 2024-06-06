@@ -1,76 +1,23 @@
-import React, { useCallback, useRef, useState } from "react";
-import { flushSync } from "react-dom";
 import { Slide } from "../../components/slide/Slide";
 import "./animation-timeline.scss";
-import { Button } from "../../components/button/Button";
 import clsx from "clsx";
-import { useArrowNav } from "../../hooks/useArrowNav";
 import viewTimelineVideo1 from "../../assets/videos/animation-timeline1.mp4";
 import viewTimelineVideo2 from "../../assets/videos/animation-timeline2.mp4";
 import viewTimelineVideo3 from "../../assets/videos/animation-timeline3.mp4";
-import { isElOutOfViewPort } from "../../utils/isInViewPort";
-
-const STEPS = [1, 2, 3, 4, 5];
-const MIN_STEP = STEPS[0];
-const MAX_STEP = STEPS.slice(-1)[0];
+import { StepButtons } from "../../components/step-buttons/StepButtons";
+import { useState } from "react";
 
 export function AnimationTimeline() {
-  const refToCheckIfOutOfViewport = useRef(null);
-  const [activeStep, setActiveStep] = useState(MIN_STEP);
-
-  const handleActiveStep = useCallback(
-    (newStep: number) => {
-      if (isElOutOfViewPort(refToCheckIfOutOfViewport.current)) {
-        return;
-      }
-
-      if ([3, 4].includes(activeStep) && [3, 4].includes(newStep)) {
-        document.startViewTransition(() => {
-          // about flushSync: https://malcolmkee.com/blog/view-transition-api-in-react-app/#usage-view-transition-api-with-react
-          flushSync(() => {
-            setActiveStep(newStep);
-          });
-        });
-      } else {
-        setActiveStep(newStep);
-      }
-    },
-    [activeStep],
-  );
-
-  const handlePrev = useCallback(
-    () => handleActiveStep(Math.max(MIN_STEP, activeStep - 1)),
-    [activeStep, handleActiveStep],
-  );
-
-  const handleNext = useCallback(
-    () => handleActiveStep(Math.min(MAX_STEP, activeStep + 1)),
-    [activeStep, handleActiveStep],
-  );
-
-  useArrowNav(handlePrev, handleNext);
+  const [activeStep, setActiveStep] = useState(1);
 
   return (
-    <Slide isWide onClick={() => handleNext()}>
-      <div ref={refToCheckIfOutOfViewport} />
-
-      <div className="animation-timeline-nav-buttons">
-        <Button.Group small>
-          {STEPS.map((step) => (
-            <Button
-              key={step}
-              rounded
-              onClick={(e) => {
-                e.stopPropagation();
-                handleActiveStep(step);
-              }}
-              active={step === activeStep}
-            >
-              {step}
-            </Button>
-          ))}
-        </Button.Group>
-      </div>
+    <Slide isWide>
+      <StepButtons
+        activeStep={activeStep}
+        onActiveStepChange={setActiveStep}
+        numSteps={5}
+        transitionSteps={[4]}
+      />
 
       <div
         className={clsx(
