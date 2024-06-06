@@ -1,9 +1,5 @@
 @import "mixins";
 
-.animation-timeline-nav-buttons {
-  @include nav-buttons;
-}
-
 .animation-timeline-transition-name {
   view-transition-name: animation-timeline-video;
 }
