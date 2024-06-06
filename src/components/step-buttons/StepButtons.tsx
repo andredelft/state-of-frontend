@@ -5,7 +5,7 @@ import { useArrowNav } from "../../hooks/useArrowNav";
 import { isElOutOfViewPort } from "../../utils/isInViewPort";
 import clsx from "clsx";
 
-type NavButtonsProps = {
+type StepButtonsProps = {
   numSteps: number;
   activeStep: number;
   onActiveStepChange: (step: number) => void;
@@ -17,7 +17,7 @@ export function StepButtons({
   activeStep,
   onActiveStepChange,
   transitionSteps = [],
-}: NavButtonsProps) {
+}: StepButtonsProps) {
   const steps = useMemo(
     // Create an array with all steps: [1, 2, ..., numSteps]
     () => Array.from({ length: numSteps }, (_, i) => i + 1),
