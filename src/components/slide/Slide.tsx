@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { ForwardedRef, forwardRef, ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 import { Warning } from "../warning/Warning";
 import "./slide.css";
 
@@ -11,28 +11,22 @@ export function SlideContainer({ children }: SlideContainerProps) {
   return <div className="slide__container">{children}</div>;
 }
 
-type SlideProps = {
-  id?: string;
-  className?: string;
+type SlideProps = HTMLAttributes<HTMLDivElement> & {
   isWide?: boolean;
-  children?: ReactNode;
-  center?: boolean;
   warning?: string;
-  onClick?: () => void;
 };
 
-export const Slide = forwardRef(ForwardedSlide);
-
-export function ForwardedSlide(
-  { id, className, isWide, children, warning, onClick }: SlideProps,
-  ref: ForwardedRef<HTMLDivElement>,
-) {
+export function Slide({
+  isWide,
+  warning,
+  children,
+  className,
+  ...divProps
+}: SlideProps) {
   return (
     <div
-      id={id}
       className={clsx("slide", isWide && "slide--wide", className)}
-      onClick={onClick}
-      ref={ref}
+      {...divProps}
     >
       {warning && <Warning warning={warning} />}
 
