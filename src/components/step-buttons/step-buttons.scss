@@ -1,0 +1,28 @@
+.step-buttons {
+  position: absolute;
+  top: 5vh;
+  right: 5vh;
+  border-radius: 0.4em;
+  overflow: hidden;
+  font-size: 0.8em;
+
+  &__button {
+    cursor: pointer;
+    color: var(--slate-700);
+    background-color: var(--slate-300);
+    padding: 0 0.3em;
+
+    &:first-child {
+      padding-left: 0.4em;
+    }
+
+    &:last-child {
+      padding-right: 0.4em;
+    }
+
+    &--active {
+      background-color: var(--slate-400);
+      color: var(--slate-700);
+    }
+  }
+}

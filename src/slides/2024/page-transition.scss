@@ -1,9 +1,5 @@
 @import "mixins";
 
-.page-transition-nav-buttons {
-  @include nav-buttons;
-}
-
 .page-transition {
   &__video {
     @include video(400px, 100%);

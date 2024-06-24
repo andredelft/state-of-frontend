@@ -1,11 +1,4 @@
-@mixin nav-buttons {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: inherit;
-}
-
-@mixin video ($smallWidth, $largeWidth){
+@mixin video($smallWidth, $largeWidth) {
   video {
     object-fit: contain;
     display: block;

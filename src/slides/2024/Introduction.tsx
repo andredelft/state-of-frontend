@@ -1,4 +1,3 @@
-import React from "react";
 import { TitleSlide } from "../../components/slide/TitleSlide";
 
 export function Introduction() {

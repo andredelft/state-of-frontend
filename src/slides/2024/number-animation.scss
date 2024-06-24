@@ -1,9 +1,5 @@
 @import "mixins";
 
-.number-animation-nav-buttons {
-  @include nav-buttons;
-}
-
 .number-animation-transition-name {
   view-transition-name: number-video;
 }

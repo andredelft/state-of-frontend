@@ -1,75 +1,21 @@
 import { Slide } from "../../components/slide/Slide";
-import { Button } from "../../components/button/Button";
-import React, { useCallback, useRef, useState } from "react";
-import { isElOutOfViewPort } from "../../utils/isInViewPort";
-import { flushSync } from "react-dom";
-import { useArrowNav } from "../../hooks/useArrowNav";
+import { useState } from "react";
 import "./page-transition.scss";
 import clsx from "clsx";
 import viewTransitionApiVideo from "../../assets/videos/view-transition-api.mp4";
 import pageTransitionJSVideo from "../../assets/videos/page-transition.mp4";
-
-const STEPS = [1, 2, 3, 4];
-const MIN_STEP = STEPS[0];
-const MAX_STEP = STEPS.slice(-1)[0];
+import { StepButtons } from "../../components/step-buttons/StepButtons";
 
 export function PageTransition() {
-  const refToCheckIfOutOfViewport = useRef(null);
-  const [activeStep, setActiveStep] = useState(MIN_STEP);
-
-  const handleActiveStep = useCallback(
-    (newStep: number) => {
-      if (isElOutOfViewPort(refToCheckIfOutOfViewport.current)) {
-        return;
-      }
-
-      if ([3, 4].includes(activeStep) && [3, 4].includes(newStep)) {
-        document.startViewTransition(() => {
-          // about flushSync: https://malcolmkee.com/blog/view-transition-api-in-react-app/#usage-view-transition-api-with-react
-          flushSync(() => {
-            setActiveStep(newStep);
-          });
-        });
-      } else {
-        setActiveStep(newStep);
-      }
-    },
-    [activeStep],
-  );
-
-  const handlePrev = useCallback(
-    () => handleActiveStep(Math.max(MIN_STEP, activeStep - 1)),
-    [activeStep, handleActiveStep],
-  );
-
-  const handleNext = useCallback(
-    () => handleActiveStep(Math.min(MAX_STEP, activeStep + 1)),
-    [activeStep, handleActiveStep],
-  );
-
-  useArrowNav(handlePrev, handleNext);
+  const [activeStep, setActiveStep] = useState(1);
 
   return (
-    <Slide isWide onClick={() => handleNext()}>
-      <div ref={refToCheckIfOutOfViewport} />
-
-      <div className="page-transition-nav-buttons">
-        <Button.Group small>
-          {STEPS.map((step) => (
-            <Button
-              key={step}
-              rounded
-              onClick={(e) => {
-                e.stopPropagation();
-                handleActiveStep(step);
-              }}
-              active={step === activeStep}
-            >
-              {step}
-            </Button>
-          ))}
-        </Button.Group>
-      </div>
+    <Slide isWide>
+      <StepButtons
+        activeStep={activeStep}
+        onActiveStepChange={setActiveStep}
+        numSteps={4}
+      />
 
       {[1, 2].includes(activeStep) && (
         <>

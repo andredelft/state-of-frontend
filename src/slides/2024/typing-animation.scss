@@ -1,9 +1,5 @@
 @import "mixins";
 
-.typing-animation-nav-buttons {
-  @include nav-buttons;
-}
-
 .typing-animation-transition-name {
   view-transition-name: typing-video;
 }
