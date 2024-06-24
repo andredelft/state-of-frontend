@@ -10,14 +10,14 @@ export function MediaSlider({ children }: MediaSliderProps) {
 }
 
 type VideoProps = {
-  videoSrc: string;
+  src: string;
 };
 
-function Video({ videoSrc }: VideoProps) {
+function Video({ src }: VideoProps) {
   return (
     <video
       className="media-slider__slide media-slider__slide--video"
-      src={videoSrc}
+      src={src}
       autoPlay
       loop
       muted
@@ -26,20 +26,21 @@ function Video({ videoSrc }: VideoProps) {
 }
 
 type ImageProps = {
-  imageSrc: string;
+  src: string;
   alt?: string;
-  source?: {
+  reference?: {
     name: string;
     href: string;
   };
 };
-function Image({ imageSrc, alt, source }: ImageProps) {
+
+function Image({ src, alt, reference }: ImageProps) {
   return (
     <figure className="media-slider__slide media-slider__slide--figure">
-      <img src={imageSrc} alt={alt || ""} />
-      {source && (
+      <img src={src} alt={alt || ""} />
+      {reference && (
         <figcaption>
-          Source: <a href={source.href}>{source.name}</a>
+          Source: <a href={reference.href}>{reference.name}</a>
         </figcaption>
       )}
     </figure>

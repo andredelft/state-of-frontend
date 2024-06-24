@@ -7,7 +7,7 @@ import { MediaSlider } from "../../components/media-slider/MediaSlider";
 import { SupportNotice } from "../../components/support-notice/SupportNotice";
 import "./shaders.scss";
 
-const bookOfShadersSource = {
+const bookOfShaders = {
   name: "Book of Shaders",
   href: "https://thebookofshaders.com/01/",
 };
@@ -18,10 +18,10 @@ export function Shaders() {
       <h1>Shaders</h1>
 
       <MediaSlider>
-        <MediaSlider.Video videoSrc={shaders} />
-        <MediaSlider.Image imageSrc={shaders1} source={bookOfShadersSource} />
-        <MediaSlider.Image imageSrc={shaders2} source={bookOfShadersSource} />
-        <MediaSlider.Image imageSrc={shaders3} source={bookOfShadersSource} />
+        <MediaSlider.Video src={shaders} />
+        <MediaSlider.Image src={shaders1} reference={bookOfShaders} />
+        <MediaSlider.Image src={shaders2} reference={bookOfShaders} />
+        <MediaSlider.Image src={shaders3} reference={bookOfShaders} />
       </MediaSlider>
 
       <SupportNotice percentage={98.17} />
