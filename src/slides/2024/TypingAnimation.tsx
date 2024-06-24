@@ -17,7 +17,11 @@ export function TypingAnimation() {
         activeStep={activeStep}
         onActiveStepChange={setActiveStep}
         numSteps={4}
-        transitionSteps={[2, 3, 4]}
+        transitionStepPairs={[
+          [1, 2],
+          [2, 3],
+          [3, 4],
+        ]}
       />
 
       <div

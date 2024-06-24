@@ -1,22 +1,22 @@
-import { RefObject, useCallback, useMemo, useRef } from "react";
+import { useCallback, useMemo, useRef } from "react";
 import "./step-buttons.scss";
-import { flushSync } from "react-dom";
 import { useArrowNav } from "../../hooks/useArrowNav";
 import { isElOutOfViewPort } from "../../utils/isInViewPort";
 import clsx from "clsx";
+import { flushSync } from "react-dom";
 
 type StepButtonsProps = {
   numSteps: number;
   activeStep: number;
   onActiveStepChange: (step: number) => void;
-  transitionSteps?: number[];
+  transitionStepPairs?: number[][];
 };
 
 export function StepButtons({
   numSteps,
   activeStep,
   onActiveStepChange,
-  transitionSteps = [],
+  transitionStepPairs = [],
 }: StepButtonsProps) {
   const steps = useMemo(
     // Create an array with all steps: [1, 2, ..., numSteps]
@@ -24,7 +24,7 @@ export function StepButtons({
     [numSteps],
   );
 
-  const wrapperRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
   const handleActiveStepChange = useCallback(
     (newStep: number) => {
@@ -32,12 +32,11 @@ export function StepButtons({
         return;
       }
 
-      const stepsAreSequential = Math.abs(activeStep - newStep) === 1;
-      const maxStepIsTransitionStep = transitionSteps.includes(
-        Math.max(activeStep, newStep),
+      const doTransition = transitionStepPairs.some(
+        (pair) => pair.includes(activeStep) && pair.includes(newStep),
       );
 
-      if (stepsAreSequential && maxStepIsTransitionStep) {
+      if (doTransition) {
         document.startViewTransition(() => {
           // about flushSync: https://malcolmkee.com/blog/view-transition-api-in-react-app/#usage-view-transition-api-with-react
           flushSync(() => onActiveStepChange(newStep));
@@ -46,7 +45,7 @@ export function StepButtons({
         onActiveStepChange(newStep);
       }
     },
-    [onActiveStepChange, transitionSteps, activeStep],
+    [onActiveStepChange, transitionStepPairs, activeStep],
   );
 
   const handlePrev = useCallback(

@@ -15,7 +15,7 @@ export function NumberAnimation() {
         activeStep={activeStep}
         onActiveStepChange={setActiveStep}
         numSteps={2}
-        transitionSteps={[2]}
+        transitionStepPairs={[[1, 2]]}
       />
 
       <div

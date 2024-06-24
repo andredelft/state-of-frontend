@@ -16,7 +16,7 @@ export function AnimationTimeline() {
         activeStep={activeStep}
         onActiveStepChange={setActiveStep}
         numSteps={5}
-        transitionSteps={[4]}
+        transitionStepPairs={[[3, 4]]}
       />
 
       <div
