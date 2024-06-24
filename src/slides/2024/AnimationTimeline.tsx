@@ -6,6 +6,7 @@ import viewTimelineVideo2 from "../../assets/videos/animation-timeline2.mp4";
 import viewTimelineVideo3 from "../../assets/videos/animation-timeline3.mp4";
 import { StepButtons } from "../../components/step-buttons/StepButtons";
 import { useState } from "react";
+import { SupportNotice } from "../../components/support-notice/SupportNotice";
 
 export function AnimationTimeline() {
   const [activeStep, setActiveStep] = useState(1);
@@ -52,6 +53,10 @@ export function AnimationTimeline() {
             </ul>
           )}
         </>
+      )}
+
+      {activeStep > 3 && (
+        <SupportNotice percentage={71.94} fallback="low-effort" />
       )}
     </Slide>
   );

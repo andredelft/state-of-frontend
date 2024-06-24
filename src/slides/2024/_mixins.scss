@@ -8,9 +8,8 @@
 
   &--small {
     position: absolute;
-    right: 0;
-    bottom: 0;
-    padding: inherit;
+    right: var(--slide-padding-inline);
+    bottom: var(--slide-padding-block);
 
     video {
       object-position: right;

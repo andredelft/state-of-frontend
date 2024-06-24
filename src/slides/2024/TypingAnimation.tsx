@@ -7,6 +7,7 @@ import spansImage from "../../assets/images/typingAnimation/spans.png";
 import spansResultGif from "../../assets/images/typingAnimation/spansResult.gif";
 import spansTwoImage from "../../assets/images/typingAnimation/spans2.png";
 import { StepButtons } from "../../components/step-buttons/StepButtons";
+import { SupportNotice } from "../../components/support-notice/SupportNotice";
 
 export function TypingAnimation() {
   const [activeStep, setActiveStep] = useState(1);
@@ -84,6 +85,8 @@ export function TypingAnimation() {
           </ul>
         </>
       )}
+
+      {activeStep > 1 && <SupportNotice percentage={100} />}
     </Slide>
   );
 }

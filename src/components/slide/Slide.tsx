@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { HTMLAttributes, ReactNode } from "react";
 import { Warning } from "../warning/Warning";
-import "./slide.css";
+import "./slide.scss";
 
 type SlideContainerProps = {
   children?: ReactNode;

@@ -5,6 +5,7 @@ import clsx from "clsx";
 import viewTransitionApiVideo from "../../assets/videos/view-transition-api.mp4";
 import pageTransitionJSVideo from "../../assets/videos/page-transition.mp4";
 import { StepButtons } from "../../components/step-buttons/StepButtons";
+import { SupportNotice } from "../../components/support-notice/SupportNotice";
 
 export function PageTransition() {
   const [activeStep, setActiveStep] = useState(1);
@@ -38,7 +39,7 @@ export function PageTransition() {
               </ul>
               <h3>Support: </h3>
               <ul>
-                <li>Single Document: 65%</li>
+                <li>Single Document: 72.3%</li>
                 <li>Cross Document (= page refresh): 0%</li>
               </ul>
             </>
@@ -64,6 +65,11 @@ export function PageTransition() {
           />
         </div>
       )}
+
+      <SupportNotice
+        percentage={activeStep === 4 ? 100 : null}
+        fallback={activeStep === 4 ? undefined : "no-fallback"}
+      />
     </Slide>
   );
 }

@@ -1,0 +1,47 @@
+.support-notice {
+  position: absolute;
+  right: var(--slide-padding-inline);
+  bottom: calc(var(--slide-padding-block) / 2);
+  font-size: 0.75em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 0.8em;
+
+  li {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.2em;
+  }
+
+  &__percentage {
+    font-weight: 800;
+
+    &--high {
+      color: var(--theme-success);
+    }
+    &--medium {
+      color: var(--theme-warning);
+    }
+    &--low,
+    &--unknown {
+      color: var(--theme-fail);
+    }
+  }
+
+  &__fallback-status {
+    font-weight: 800;
+
+    &--no-fallback {
+      color: var(--theme-success);
+    }
+    &--low-effort {
+      color: var(--theme-warning);
+    }
+    &--high-effort {
+      color: var(--theme-fail);
+    }
+  }
+}

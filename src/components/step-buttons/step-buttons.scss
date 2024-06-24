@@ -1,7 +1,7 @@
 .step-buttons {
   position: absolute;
-  top: 5vh;
-  right: 5vh;
+  top: calc(var(--slide-padding-block) / 2);
+  right: var(--slide-padding-inline);
   border-radius: 0.4em;
   overflow: hidden;
   font-size: 0.8em;

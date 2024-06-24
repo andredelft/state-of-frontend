@@ -1,6 +1,5 @@
 import { ReactNode } from "react";
 import { Slide } from "./Slide";
-import "./slide.css";
 
 type TitleSlideProps = {
   title: string;

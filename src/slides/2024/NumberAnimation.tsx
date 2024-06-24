@@ -5,6 +5,7 @@ import numberAnimation from "../../assets/videos/number-animation.mp4";
 import clsx from "clsx";
 import codeSnippet from "../../assets/images/numberAnimation/code-snippet.png";
 import { StepButtons } from "../../components/step-buttons/StepButtons";
+import { SupportNotice } from "../../components/support-notice/SupportNotice";
 
 export function NumberAnimation() {
   const [activeStep, setActiveStep] = useState(1);
@@ -39,10 +40,14 @@ export function NumberAnimation() {
           <img src={codeSnippet} width={700} alt="" />
           <ul>
             <li>Geen JS, betere performance</li>
-            <li>Nieuwe animatie mogelijkheden</li>
+            <li>Nieuwe animatie-mogelijkheden</li>
             <li>Easing!</li>
           </ul>
         </div>
+      )}
+
+      {activeStep > 1 && (
+        <SupportNotice percentage={89.1} fallback="low-effort" />
       )}
     </Slide>
   );
