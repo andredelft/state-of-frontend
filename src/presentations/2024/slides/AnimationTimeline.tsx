@@ -1,19 +1,19 @@
-import { Slide } from "../../components/slide/Slide";
+import { Slide } from "components/slide/Slide";
 import "./animation-timeline.scss";
 import clsx from "clsx";
-import viewTimelineVideo1 from "../../assets/videos/animation-timeline1.mp4";
-import viewTimelineVideo2 from "../../assets/videos/animation-timeline2.mp4";
-import viewTimelineVideo3 from "../../assets/videos/animation-timeline3.mp4";
-import { StepButtons } from "../../components/step-buttons/StepButtons";
+import viewTimelineVideo1 from "assets/videos/animation-timeline1.mp4";
+import viewTimelineVideo2 from "assets/videos/animation-timeline2.mp4";
+import viewTimelineVideo3 from "assets/videos/animation-timeline3.mp4";
+import { Steps } from "components/steps/Steps";
 import { useState } from "react";
-import { SupportNotice } from "../../components/support-notice/SupportNotice";
+import { SupportNotice } from "components/support-notice/SupportNotice";
 
 export function AnimationTimeline() {
   const [activeStep, setActiveStep] = useState(1);
 
   return (
     <Slide isWide>
-      <StepButtons
+      <Steps
         activeStep={activeStep}
         onActiveStepChange={setActiveStep}
         numSteps={5}

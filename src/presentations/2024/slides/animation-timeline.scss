@@ -1,4 +1,4 @@
-@import "mixins";
+@use "mixins";
 
 .animation-timeline-transition-name {
   view-transition-name: animation-timeline-video;
@@ -6,6 +6,6 @@
 
 .animation-timeline {
   &__video {
-    @include video(400px, 80vw);
+    @include mixins.video(400px, 80vw);
   }
 }

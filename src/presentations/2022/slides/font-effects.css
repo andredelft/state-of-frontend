@@ -8,7 +8,7 @@
 }
 
 .font-effects__heading {
-  font-family: 'Changa', sans-serif;
+  font-family: "Changa", sans-serif;
   font-weight: 800;
   font-size: 12vw;
   line-height: 1;
@@ -47,14 +47,14 @@
 @keyframes fontBackground {
   0% {
     background-size: 100% auto;
-    background-image: url('../../assets/images/fontBackgrounds/1.jpg');
+    background-image: url("assets/images/fontBackgrounds/1.jpg");
   }
   50% {
     background-size: contain;
-    background-image: url('../../assets/images/fontBackgrounds/2.jpg');
+    background-image: url("assets/images/fontBackgrounds/2.jpg");
   }
   100% {
     background-size: contain;
-    background-image: url('../../assets/images/fontBackgrounds/3.jpg');
+    background-image: url("assets/images/fontBackgrounds/3.jpg");
   }
 }

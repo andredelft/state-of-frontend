@@ -1,9 +1,9 @@
-import { TitleSlide } from "../../components/slide/TitleSlide";
+import { TitleSlide } from "components/slide/TitleSlide";
 
 export function Introduction() {
   return (
     <TitleSlide
-      title="Nóg meer toffe Front-end technieken"
+      title="The State of CSS"
       description="André van Delft & Tim van Schie"
     />
   );

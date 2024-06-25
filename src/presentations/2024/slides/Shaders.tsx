@@ -1,10 +1,10 @@
-import { Slide } from "../../components/slide/Slide";
-import shaders from "../../assets/videos/shaders.mp4";
-import shaders1 from "../../assets/images/shaders/shaders-1.jpeg";
-import shaders2 from "../../assets/images/shaders/shaders-2.jpeg";
-import shaders3 from "../../assets/images/shaders/shaders-3.jpeg";
-import { MediaSlider } from "../../components/media-slider/MediaSlider";
-import { SupportNotice } from "../../components/support-notice/SupportNotice";
+import { Slide } from "components/slide/Slide";
+import shaders from "assets/videos/shaders.mp4";
+import shaders1 from "assets/images/shaders/shaders-1.jpeg";
+import shaders2 from "assets/images/shaders/shaders-2.jpeg";
+import shaders3 from "assets/images/shaders/shaders-3.jpeg";
+import { MediaSlider } from "components/media-slider/MediaSlider";
+import { SupportNotice } from "components/support-notice/SupportNotice";
 import "./shaders.scss";
 
 const bookOfShaders = {

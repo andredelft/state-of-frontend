@@ -1,18 +1,18 @@
-import { Slide } from "../../components/slide/Slide";
+import { Slide } from "components/slide/Slide";
 import { useState } from "react";
 import "./page-transition.scss";
 import clsx from "clsx";
-import viewTransitionApiVideo from "../../assets/videos/view-transition-api.mp4";
-import pageTransitionJSVideo from "../../assets/videos/page-transition.mp4";
-import { StepButtons } from "../../components/step-buttons/StepButtons";
-import { SupportNotice } from "../../components/support-notice/SupportNotice";
+import viewTransitionApiVideo from "assets/videos/view-transition-api.mp4";
+import pageTransitionJSVideo from "assets/videos/page-transition.mp4";
+import { Steps } from "components/steps/Steps";
+import { SupportNotice } from "components/support-notice/SupportNotice";
 
 export function PageTransition() {
   const [activeStep, setActiveStep] = useState(1);
 
   return (
     <Slide isWide>
-      <StepButtons
+      <Steps
         activeStep={activeStep}
         onActiveStepChange={setActiveStep}
         numSteps={4}

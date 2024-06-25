@@ -1,13 +1,13 @@
 import clsx from "clsx";
-import React, { useRef, useState } from "react";
-import { Button } from "../../components/button/Button";
+import { useRef, useState } from "react";
+import { Button } from "components/button/Button";
 import {
   Listbox,
   ListboxItem,
   ListboxItems,
-} from "../../components/inputs/listbox/Listbox";
-import { WithLabel } from "../../components/inputs/WithLabel";
-import { Slide } from "../../components/slide/Slide";
+} from "components/inputs/listbox/Listbox";
+import { WithLabel } from "components/inputs/WithLabel";
+import { Slide } from "components/slide/Slide";
 import "./dialog.css";
 
 type BackdropOption = "blur" | "saturate" | "sepia" | "invert";
@@ -15,7 +15,7 @@ type BackdropOption = "blur" | "saturate" | "sepia" | "invert";
 export function Dialog() {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [backdrop, setBackdrop] = useState<ListboxItem<BackdropOption> | null>(
-    null
+    null,
   );
 
   const backdropOptions: ListboxItems<BackdropOption> = [

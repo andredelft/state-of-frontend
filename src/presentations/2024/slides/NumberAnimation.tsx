@@ -1,18 +1,18 @@
 import { useState } from "react";
-import { Slide } from "../../components/slide/Slide";
+import { Slide } from "components/slide/Slide";
 import "./number-animation.scss";
-import numberAnimation from "../../assets/videos/number-animation.mp4";
+import numberAnimation from "assets/videos/number-animation.mp4";
 import clsx from "clsx";
-import codeSnippet from "../../assets/images/numberAnimation/code-snippet.png";
-import { StepButtons } from "../../components/step-buttons/StepButtons";
-import { SupportNotice } from "../../components/support-notice/SupportNotice";
+import codeSnippet from "assets/images/numberAnimation/code-snippet.png";
+import { Steps } from "components/steps/Steps";
+import { SupportNotice } from "components/support-notice/SupportNotice";
 
 export function NumberAnimation() {
   const [activeStep, setActiveStep] = useState(1);
 
   return (
     <Slide isWide>
-      <StepButtons
+      <Steps
         activeStep={activeStep}
         onActiveStepChange={setActiveStep}
         numSteps={2}

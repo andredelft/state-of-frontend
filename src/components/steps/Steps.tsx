@@ -1,23 +1,23 @@
 import { useCallback, useMemo, useRef } from "react";
-import "./step-buttons.scss";
+import "./steps.scss";
 import { useArrowNav } from "../../hooks/useArrowNav";
 import { isElOutOfViewPort } from "../../utils/isInViewPort";
 import clsx from "clsx";
 import { flushSync } from "react-dom";
 
-type StepButtonsProps = {
+type StepsProps = {
   numSteps: number;
   activeStep: number;
   onActiveStepChange: (step: number) => void;
   transitionStepPairs?: number[][];
 };
 
-export function StepButtons({
+export function Steps({
   numSteps,
   activeStep,
   onActiveStepChange,
   transitionStepPairs = [],
-}: StepButtonsProps) {
+}: StepsProps) {
   const steps = useMemo(
     // Create an array with all steps: [1, 2, ..., numSteps]
     () => Array.from({ length: numSteps }, (_, i) => i + 1),
@@ -61,13 +61,13 @@ export function StepButtons({
   useArrowNav(handlePrev, handleNext);
 
   return (
-    <div className="step-buttons" ref={wrapperRef}>
+    <div className="steps" ref={wrapperRef}>
       {steps.map((step) => (
         <button
           key={step}
           className={clsx(
-            "step-buttons__button",
-            step === activeStep && "step-buttons__button--active",
+            "steps__button",
+            step === activeStep && "steps__button--active",
           )}
           onClick={() => handleActiveStepChange(step)}
         >

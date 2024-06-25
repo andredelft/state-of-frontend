@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
-import { Slide } from "../../components/slide/Slide";
-import './grid.css';
-import { Listbox, ListboxItem, ListboxItems } from "../../components/inputs/listbox/Listbox";
-import { WithLabel } from "../../components/inputs/WithLabel";
+import { useState } from "react";
+import { Slide } from "components/slide/Slide";
+import "./grid.css";
+import {
+  Listbox,
+  ListboxItem,
+  ListboxItems,
+} from "components/inputs/listbox/Listbox";
+import { WithLabel } from "components/inputs/WithLabel";
 import clsx from "clsx";
-import { Switch } from "../../components/inputs/switch/Switch";
+import { Switch } from "components/inputs/switch/Switch";
 
 type GridArea = "one" | "two" | "three" | "four" | "five";
 
@@ -19,7 +23,7 @@ const listboxItems: ListboxItems<GridArea> = [
 export function Grid() {
   const [showPhoto, setShowPhoto] = useState<boolean>(false);
   const [selectedItem, setSelectedItem] = useState<ListboxItem<GridArea>>(
-    listboxItems[4]
+    listboxItems[4],
   );
 
   return (
@@ -28,7 +32,7 @@ export function Grid() {
 
       <div className="input-container">
         <WithLabel label="Show photo">
-          <Switch checked={showPhoto} onChange={setShowPhoto}/>
+          <Switch checked={showPhoto} onChange={setShowPhoto} />
         </WithLabel>
 
         {showPhoto && (
@@ -44,14 +48,20 @@ export function Grid() {
         )}
       </div>
 
-      <div className={clsx('grid', showPhoto ? 'grid--photo-area-' + selectedItem.name : 'grid--with-hover')}>
-        <div/>
-        <div/>
-        <div/>
-        <div/>
-        <div className={clsx(showPhoto && "photo")}/>
+      <div
+        className={clsx(
+          "grid",
+          showPhoto
+            ? "grid--photo-area-" + selectedItem.name
+            : "grid--with-hover",
+        )}
+      >
+        <div />
+        <div />
+        <div />
+        <div />
+        <div className={clsx(showPhoto && "photo")} />
       </div>
-
     </Slide>
   );
 }

@@ -1,5 +1,5 @@
 import { GithubLogo } from "phosphor-react";
-import { TitleSlide } from "../../components/slide/TitleSlide";
+import { TitleSlide } from "components/slide/TitleSlide";
 import "./conclusion.css";
 
 export function Conclusion() {

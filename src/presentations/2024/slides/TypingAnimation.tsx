@@ -1,20 +1,20 @@
 import { useState } from "react";
-import { Slide } from "../../components/slide/Slide";
+import { Slide } from "components/slide/Slide";
 import "./typing-animation.scss";
-import textAnimation from "../../assets/videos/textAnimation.mp4";
+import textAnimation from "assets/videos/textAnimation.mp4";
 import clsx from "clsx";
-import spansImage from "../../assets/images/typingAnimation/spans.png";
-import spansResultGif from "../../assets/images/typingAnimation/spansResult.gif";
-import spansTwoImage from "../../assets/images/typingAnimation/spans2.png";
-import { StepButtons } from "../../components/step-buttons/StepButtons";
-import { SupportNotice } from "../../components/support-notice/SupportNotice";
+import spansImage from "assets/images/typingAnimation/spans.png";
+import spansResultGif from "assets/images/typingAnimation/spansResult.gif";
+import spansTwoImage from "assets/images/typingAnimation/spans2.png";
+import { Steps } from "components/steps/Steps";
+import { SupportNotice } from "components/support-notice/SupportNotice";
 
 export function TypingAnimation() {
   const [activeStep, setActiveStep] = useState(1);
 
   return (
     <Slide isWide>
-      <StepButtons
+      <Steps
         activeStep={activeStep}
         onActiveStepChange={setActiveStep}
         numSteps={4}
