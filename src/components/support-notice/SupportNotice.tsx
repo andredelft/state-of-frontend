@@ -1,70 +1,78 @@
-import "./support-notice.scss";
+import { ReactNode } from "react";
 import clsx from "clsx";
+import "./support-notice.scss";
 
 type Percentage = number | null;
-type FallbackStatus = "no-fallback" | "low-effort" | "high-effort";
+type Fallback = "no-fallback" | "low-effort" | "high-effort";
+
+type Status = "success" | "warning" | "fail";
 
 type SupportNoticeProps = {
-  percentage: number | null;
-  fallback?: FallbackStatus;
+  percentage: Percentage;
+  fallback?: Fallback;
 };
 
-//
-
-function getPercentageClass(percentage: Percentage): string {
+function getPercentageStatus(percentage: Percentage): Status {
   if (percentage === null) {
-    return "unknown";
+    return "warning";
   }
 
   if (percentage > 95) {
-    return "high";
+    return "success";
   }
 
   if (percentage > 80) {
-    return "medium";
+    return "warning";
   }
 
-  return "low";
+  return "fail";
 }
 
-function getFallbackStatusText(fallbackStatus: FallbackStatus): string {
-  switch (fallbackStatus) {
+function getFallbackStatus(fallback: Fallback): {
+  value: string;
+  status: Status;
+} {
+  switch (fallback) {
     case "no-fallback":
-      return "Geen fallback nodig";
+      return { value: "Geen fallback nodig", status: "success" };
     case "low-effort":
-      return "Low effort";
+      return { value: "Low effort", status: "warning" };
     case "high-effort":
-      return "High effort";
+      return { value: "High effort", status: "fail" };
   }
 }
 
 export function SupportNotice({ percentage, fallback }: SupportNoticeProps) {
   return (
     <ul className="support-notice">
-      <li>
-        Support:{" "}
-        <span
-          className={clsx(
-            "support-notice__percentage",
-            `support-notice__percentage--${getPercentageClass(percentage)}`,
-          )}
-        >
-          {percentage ? `${percentage.toFixed(1)}%` : "?"}
-        </span>
-      </li>
-      {fallback && (
-        <li>
-          Fallback:{" "}
-          <span
-            className={clsx(
-              "support-notice__fallback-status",
-              `support-notice__fallback-status--${fallback}`,
-            )}
-          >
-            {getFallbackStatusText(fallback)}
-          </span>
-        </li>
-      )}
+      <Item
+        label="Support"
+        value={percentage === null ? "?" : `${percentage.toFixed(1)}%`}
+        status={getPercentageStatus(percentage)}
+      />
+      {fallback && <Item label="Fallback" {...getFallbackStatus(fallback)} />}
     </ul>
+  );
+}
+
+type ItemProps = {
+  label: ReactNode;
+  value: ReactNode;
+  status?: Status;
+};
+
+function Item({ label, value, status }: ItemProps) {
+  return (
+    <li className="support-notice__item">
+      {label}:{" "}
+      <span
+        className={clsx(
+          "support-notice__item-value",
+          status && `support-notice__item-value--${status}`,
+        )}
+      >
+        {value}
+      </span>
+    </li>
   );
 }

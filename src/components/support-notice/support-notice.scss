@@ -9,38 +9,23 @@
   display: flex;
   gap: 0.8em;
 
-  li {
+  &__item {
     margin: 0;
     display: flex;
     align-items: center;
     gap: 0.2em;
   }
 
-  &__percentage {
+  &__item-value {
     font-weight: 800;
 
-    &--high {
+    &--success {
       color: var(--theme-success);
     }
-    &--medium {
+    &--warning {
       color: var(--theme-warning);
     }
-    &--low,
-    &--unknown {
-      color: var(--theme-fail);
-    }
-  }
-
-  &__fallback-status {
-    font-weight: 800;
-
-    &--no-fallback {
-      color: var(--theme-success);
-    }
-    &--low-effort {
-      color: var(--theme-warning);
-    }
-    &--high-effort {
+    &--fail {
       color: var(--theme-fail);
     }
   }
